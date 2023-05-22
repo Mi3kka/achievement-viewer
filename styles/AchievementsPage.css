@@ -1,11 +1,18 @@
 .achievements-container {
   background-color: #1b2838;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .header-bar {
   background-color: #2a475e;
   padding: 2rem 0;
+  max-width: 75rem;
+  min-width: 20rem;
+  margin: auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -14,17 +21,33 @@
   }
 }
 
-.user-picture img {
-  padding: 20px 0;
-  max-width: 50%;
+.user-picture {
+  border-radius: 25px;
+  position: relative;
+  max-width: 45%;
   height: auto;
-  border-radius: 50%;
-  margin-right: 20px;
-  margin-left: 20px;
+  padding-left: 1rem;
+}
+
+.user-picture img:hover {
+  box-shadow: 0 0 10px 5px #00f7ff;
 }
 
 .username {
-  margin-left: 20px;
+  font-size: 2.3rem;
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .user-picture img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .username {
+    font-size: 1.2rem;
+    margin-left: 0.4rem;  /* Reduced font size for small screens */
+  }
 }
 
 .achievement-card {
@@ -62,5 +85,15 @@
 
 .achievement-text {
   font-weight: normal;
-  margin-right: 20px;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .achievement-card {
+    margin-right: 1rem;  /* Reduced font size for small screens */
+  }
+  .achievement-number,
+  .achievement-text {
+    font-size: 0.8rem;
+  }
 }

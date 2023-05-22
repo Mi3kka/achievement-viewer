@@ -1,0 +1,28 @@
+.games-container {
+  max-width: 75rem;
+  min-width: 20rem;
+  margin: 0 auto; /* Centers the container */
+}
+
+@media screen and (max-width: 600px) {
+  .sort-buttons button {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;  /* You can adjust this to suit your design */
+  }
+
+  /* Resize game name text for smaller screens */
+  .game-card .game-name {
+    font-size: 1rem;  /* Adjust as needed */
+  }
+}
+
+.sort-buttons {
+  justify-content: flex-end;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.games-list {
+  overflow-y: scroll;
+  max-height: 70vh;
+}
