@@ -6,13 +6,13 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.achievement-image {
+.achievement-img {
   border-radius: 50%;
   border: 1px solid #16202d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.achievement-details {
+.achievement-text-container {
   color: #ffffff;
 }
 
@@ -21,9 +21,9 @@
   margin-bottom: 0.2rem;
 }
 
-.achievement-progress {
-  display: flex;
-  flex-direction: column;
+.achievement-description {
+  font-size: 0.85rem;
+  color: #66c0f4;
 }
 
 .achievement-status {
@@ -31,54 +31,23 @@
   color: #66c0f4;
 }
 
-.achievement-date {
+.achievement-unlock-percentage {
   font-size: 0.85rem;
-  color: #ffffff;
-}
-
-.achievement-percentage {
-  font-size: 0.85rem;
-  color: #ffffff;
-}
-
-.achievement-game-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #66c0f4;
-  color: #1b2838;
-  font-weight: bold;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  color: #66c0f4;
 }
 
 /* For smaller screens */
 
 @media screen and (max-width: 600px) {
-  .achievement-game-image-container {
-    width: 30px;
-    height: 30px;
-    font-size: 0.75rem;
-  }
-}
-
-.achievement-global-percentage {
-  /* If you have a specific style in mind, add it here */
-}
-
-/* For smaller screens */
-
-@media screen and (max-width: 600px) {
-  .achievement-image {
+  .achievement-img {
     width: 30px;
     height: 30px;
   }
 
   .achievement-name,
+  .achievement-description,
   .achievement-status,
-  .achievement-date,
-  .achievement-percentage {
+  .achievement-unlock-percentage {
     font-size: 0.81rem;
   }
 }

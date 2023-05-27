@@ -1,44 +1,78 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { games } from '../../dummy-data/GameData';
-import GameCard from '../components/GameCard';
 import AchievementCard from '../components/AchievementCard';
 import '../../styles/AchievementsContainer.css';
 
-export default function AllAchievementsContainer({ handleViewAll }) {
-  const [viewAll, setViewAll] = useState(false);
+function AllAchievementsContainer({ handleViewAll }) {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [lockedFilter, setLockedFilter] = useState(null);
+  const [visibilityFilter, setVisibilityFilter] = useState(null);
+  const [sortMethod, setSortMethod] = useState(null);
+  const [filteredAchievements, setFilteredAchievements] = useState([]);
 
-  const toggleView = () => {
-    setViewAll(!viewAll);
+  const achievements = games.reduce(
+    (acc, game) => [...acc, ...game.achievementsList.map((achievement) => ({ ...achievement, game }))],
+    []
+  );
+
+  useEffect(() => {
+    // Filter the achievements based on the search term
+    const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+    const newFilteredAchievements = achievements.filter(
+      (achievement) =>
+        achievement.name.toLowerCase().includes(lowerCaseSearchTerm) || // Check if the achievement name matches the search term
+        achievement.game.name.toLowerCase().includes(lowerCaseSearchTerm) // Check if the game name matches the search term
+    );
+
+    setFilteredAchievements(newFilteredAchievements);
+  }, [searchTerm, achievements]); // Add `achievements` as a dependency
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
-  if (!viewAll) {
-    return (
-      <div className="games-container">
-        <button className="back-button" onClick={handleViewAll}>
-          🔙 Back to Games
-        </button>
-        <div className="games-list" style={{ overflowY: 'scroll', maxHeight: '70vh' }}>
-          {games.map((game) => (
-            <GameCard key={game.id} game={game} />
-          ))}
-        </div>
-        <button className="toggle-view-button" onClick={toggleView}>
-          🏆 View All Achievements
-        </button>
-      </div>
-    );
-  }
+  const handleLockedFilterChange = (event) => {
+    setLockedFilter(event.target.value);
+    // Implement locked/unlocked filter logic here
+  };
+
+  const handleVisibilityFilterChange = (event) => {
+    setVisibilityFilter(event.target.value);
+    // Implement visibility on/off filter logic here
+  };
+
+  const handleSortMethodChange = (event) => {
+    setSortMethod(event.target.value);
+    // Implement sort logic here
+  };
 
   return (
-    <div className="games-container">
-      <button className="back-button" onClick={toggleView}>
-        🔙 Back to Games
-      </button>
-      <div className="achievements-list" style={{ overflowY: 'scroll', maxHeight: '70vh' }}>
-        {games.flatMap((game) => game.achievementsList).map((achievement) => (
-          <AchievementCard key={achievement.id} achievement={achievement} />
+    <div>
+      <button onClick={handleViewAll}>Back</button>
+      <input type="text" placeholder="Search..." onChange={handleSearchChange} value={searchTerm} />
+      <select onChange={handleLockedFilterChange} value={lockedFilter}>
+        <option value={null}>All</option>
+        <option value={true}>Locked</option>
+        <option value={false}>Unlocked</option>
+      </select>
+      <select onChange={handleVisibilityFilterChange} value={visibilityFilter}>
+        <option value={null}>All</option>
+        <option value={true}>Visible</option>
+        <option value={false}>Hidden</option>
+      </select>
+      <select onChange={handleSortMethodChange} value={sortMethod}>
+        <option value={null}>No Sort</option>
+        <option value="globalUnlock">Global Unlocks</option>
+        <option value="unlockDate">Unlock Date</option>
+      </select>
+      <div className="achievement-container" style={{ overflowY: 'scroll', maxHeight: '80vh' }}>
+        {filteredAchievements.map((achievement) => (
+          <AchievementCard key={`${achievement.id}-${achievement.game.id}`} achievement={achievement} />
         ))}
       </div>
     </div>
   );
 }
+
+export default AllAchievementsContainer;
