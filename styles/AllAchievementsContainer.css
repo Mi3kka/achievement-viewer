@@ -1,0 +1,35 @@
+.achievements-container {
+  max-width: 75rem;
+  min-width: 20rem;
+  margin: 0 auto; /* Centers the container */
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  color: #2a475e;
+  font-size: 1.5rem;
+}
+
+.achievements-list {
+  overflow-y: scroll;
+  max-height: 70vh;
+}
+
+.achievement-card {
+  background: #2a475e;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .achievement-card {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;  /* You can adjust this to suit your design */
+  }
+}

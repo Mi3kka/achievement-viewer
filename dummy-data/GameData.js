@@ -7,10 +7,39 @@ export const games = [
     image: "/pictures/hl2.png",
     achievements: {
       completed: 20,
-      total: 33
+      total: 33,
     },
-    lastPlayed: new Date('2023-05-01'),
-    achievementsList: {} // For future use
+    lastPlayed: new Date('2023-05-03'),
+    achievementsList: [
+      {
+        id: 1,
+        name: "City Escape",
+        locked: false,
+        unlockDate: new Date('2023-05-02'),
+        hidden: false,
+        image: "/achievement_images/hl2-city-escape.png",
+        unlockPercentage: 75,
+      },
+      {
+        id: 2,
+        name: "Gordon's Escape",
+        locked: true,
+        unlockDate: null,
+        hidden: false,
+        image: "/achievement_images/hl2-gordons-escape.png",
+        unlockPercentage: 0,
+      },
+      {
+        id: 3,
+        name: "Citizen Freeman",
+        locked: false,
+        unlockDate: new Date('2023-05-03'),
+        hidden: false,
+        image: "/achievement_images/hl2-citizen-freeman.png",
+        unlockPercentage: 50,
+      },
+      // Add more achievements for Half-Life 2
+    ],
   },
   {
     id: 2,
@@ -18,10 +47,39 @@ export const games = [
     image: "/pictures/portal.png",
     achievements: {
       completed: 10,
-      total: 15
+      total: 15,
     },
-    lastPlayed: new Date('2023-05-10'),
-    achievementsList: {}
+    lastPlayed: new Date('2023-05-11'),
+    achievementsList: [
+      {
+        id: 1,
+        name: "Welcome to Aperture",
+        locked: false,
+        unlockDate: new Date('2023-05-10'),
+        hidden: false,
+        image: "/achievement_images/portal-welcome-to-aperture.png",
+        unlockPercentage: 100,
+      },
+      {
+        id: 2,
+        name: "Portal Master",
+        locked: false,
+        unlockDate: new Date('2023-05-11'),
+        hidden: true,
+        image: "/achievement_images/portal-portal-master.png",
+        unlockPercentage: 50,
+      },
+      {
+        id: 3,
+        name: "Cake Is a Lie",
+        locked: true,
+        unlockDate: new Date('2023-05-11'),
+        hidden: false,
+        image: "/achievement_images/portal-cake-is-a-lie.png",
+        unlockPercentage: 0,
+      },
+      // Add more achievements for Portal
+    ],
   },
   {
     id: 3,
@@ -29,10 +87,39 @@ export const games = [
     image: "/pictures/tf2.png",
     achievements: {
       completed: 100,
-      total: 520
+      total: 520,
     },
     lastPlayed: new Date('2023-05-05'),
-    achievementsList: {}
+    achievementsList: [
+      {
+        id: 1,
+        name: "Capture the Flag",
+        locked: false,
+        unlockDate: new Date('2023-04-25'),
+        hidden: false,
+        image: "/achievement_images/tf2-capture-the-flag.png",
+        unlockPercentage: 80,
+      },
+      {
+        id: 2,
+        name: "King of the Hill",
+        locked: false,
+        unlockDate: new Date('2023-05-04'),
+        hidden: true,
+        image: "/achievement_images/tf2-king-of-the-hill.png",
+        unlockPercentage: 70,
+      },
+      {
+        id: 3,
+        name: "Payload",
+        locked: true,
+        unlockDate: new Date('2023-05-06'),
+        hidden: false,
+        image: "/achievement_images/tf2-payload.png",
+        unlockPercentage: 0,
+      },
+      // Add more achievements for Team Fortress 2
+    ],
   },
   {
     id: 4,
@@ -40,10 +127,39 @@ export const games = [
     image: "/pictures/dota2.png",
     achievements: {
       completed: 5,
-      total: 167
+      total: 167,
     },
     lastPlayed: new Date('2023-04-30'),
-    achievementsList: {}
+    achievementsList: [
+      {
+        id: 1,
+        name: "First Blood",
+        locked: false,
+        unlockDate: new Date('2023-04-01'),
+        hidden: false,
+        image: "/achievement_images/dota2-first-blood.png",
+        unlockPercentage: 90,
+      },
+      {
+        id: 2,
+        name: "The International Champion",
+        locked: true,
+        unlockDate: new Date('2023-04-09'),
+        hidden: false,
+        image: "/achievement_images/dota2-the-international-champion.png",
+        unlockPercentage: 0,
+      },
+      {
+        id: 3,
+        name: "Tower Destroyer",
+        locked: false,
+        unlockDate: new Date('2023-04-13'),
+        hidden: true,
+        image: "/achievement_images/dota2-tower-destroyer.png",
+        unlockPercentage: 75,
+      },
+      // Add more achievements for DOTA 2
+    ],
   },
   {
     id: 5,
@@ -51,10 +167,39 @@ export const games = [
     image: "/pictures/csgo.png",
     achievements: {
       completed: 150,
-      total: 167
+      total: 167,
     },
-    lastPlayed: new Date('2023-03-02'),
-    achievementsList: {}
+    lastPlayed: new Date('2023-04-02'),
+    achievementsList: [
+      {
+        id: 1,
+        name: "Bomb Defuser",
+        locked: false,
+        unlockDate: new Date('2023-03-03'),
+        hidden: false,
+        image: "/achievement_images/csgo-bomb-defuser.png",
+        unlockPercentage: 90,
+      },
+      {
+        id: 2,
+        name: "Headshot Master",
+        locked: false,
+        unlockDate: new Date('2023-03-15'),
+        hidden: true,
+        image: "/achievement_images/csgo-headshot-master.png",
+        unlockPercentage: 80,
+      },
+      {
+        id: 3,
+        name: "Ninja Defuser",
+        locked: true,
+        unlockDate: new Date('2023-04-02'),
+        hidden: false,
+        image: "/achievement_images/csgo-ninja-defuser.png",
+        unlockPercentage: 0,
+      },
+      // Add more achievements for Counter-Strike: Global Offensive
+    ],
   },
   {
     id: 6,
@@ -62,10 +207,39 @@ export const games = [
     image: "/pictures/skyrim.png",
     achievements: {
       completed: 40,
-      total: 75
+      total: 75,
     },
     lastPlayed: new Date('2023-05-18'),
-    achievementsList: {}
+    achievementsList: [
+      {
+        id: 1,
+        name: "Dragon Slayer",
+        locked: false,
+        unlockDate: new Date('2023-04-19'),
+        hidden: false,
+        image: "/achievement_images/skyrim-dragon-slayer.png",
+        unlockPercentage: 60,
+      },
+      {
+        id: 2,
+        name: "Thieves Guild Master",
+        locked: false,
+        unlockDate: new Date('2023-05-15'),
+        hidden: true,
+        image: "/achievement_images/skyrim-thieves-guild-master.png",
+        unlockPercentage: 50,
+      },
+      {
+        id: 3,
+        name: "Dark Brotherhood Assassin",
+        locked: true,
+        unlockDate: new Date('2023-05-19'),
+        hidden: false,
+        image: "/achievement_images/skyrim-dark-brotherhood-assassin.png",
+        unlockPercentage: 0,
+      },
+      // Add more achievements for The Elder Scrolls V: Skyrim
+    ],
   },
   {
     id: 7,
@@ -73,9 +247,39 @@ export const games = [
     image: "/pictures/stardew_valley.png",
     achievements: {
       completed: 20,
-      total: 40
+      total: 40,
     },
     lastPlayed: new Date('2023-05-15'),
-    achievementsList: {}
+    achievementsList: [
+      {
+        id: 1,
+        name: "Green Thumb",
+        locked: false,
+        unlockDate: new Date('2023-04-16'),
+        hidden: false,
+        image: "/achievement_images/stardew-valley-green-thumb.png",
+        unlockPercentage: 80,
+      },
+      {
+        id: 2,
+        name: "Master Angler",
+        locked: false,
+        unlockDate: new Date('2023-04-18'),
+        hidden: true,
+        image: "/achievement_images/stardew-valley-master-angler.png",
+        unlockPercentage: 70,
+      },
+      {
+        id: 3,
+        name: "Joja Co. Member",
+        locked: true,
+        unlockDate: new Date('2023-05-15'),
+        hidden: false,
+        image: "/achievement_images/stardew-valley-joja-co-member.png",
+        unlockPercentage: 0,
+      },
+      // Add more achievements for Stardew Valley
+    ],
   },
+  // Add more game entries with their respective achievements
 ];

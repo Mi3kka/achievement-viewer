@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import AchievementsContainer from '../src/components/AchievementsContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,9 +28,9 @@ export default function Achievements() {
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <div className="mr-5 achievement-card">
+          <div className="mr-5 achievement-header">
             <div className="achievement-text-container">
-              <span className="achievement-text">🏆 Overall Achievements:</span>
+              <span className="achievement-text">🏆 All Achievements:</span>
               <span className="achievement-text">🎮 Perfect Games:</span>
             </div>
             <div className="achievement-number-container">

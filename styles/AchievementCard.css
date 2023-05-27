@@ -1,0 +1,84 @@
+/* AchievementCard.css */
+
+.achievement-card {
+  background-color: #1b2838;
+  border: 1px solid #16202d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.achievement-image {
+  border-radius: 50%;
+  border: 1px solid #16202d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.achievement-details {
+  color: #ffffff;
+}
+
+.achievement-name {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.achievement-progress {
+  display: flex;
+  flex-direction: column;
+}
+
+.achievement-status {
+  font-size: 0.85rem;
+  color: #66c0f4;
+}
+
+.achievement-date {
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.achievement-percentage {
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.achievement-game-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #66c0f4;
+  color: #1b2838;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* For smaller screens */
+
+@media screen and (max-width: 600px) {
+  .achievement-game-image-container {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+}
+
+.achievement-global-percentage {
+  /* If you have a specific style in mind, add it here */
+}
+
+/* For smaller screens */
+
+@media screen and (max-width: 600px) {
+  .achievement-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .achievement-name,
+  .achievement-status,
+  .achievement-date,
+  .achievement-percentage {
+    font-size: 0.81rem;
+  }
+}
