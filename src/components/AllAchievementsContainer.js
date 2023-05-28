@@ -52,7 +52,7 @@ function AllAchievementsContainer({ handleViewAll }) {
     }
 
     setFilteredAchievements(newFilteredAchievements);
-  }, [gameSearchTerm, achievementSearchTerm, lockedFilter, visibilityFilter, sortMethod, achievements]); // Add `gameSearchTerm` and `achievementSearchTerm` as dependencies
+  }, [gameSearchTerm, achievementSearchTerm, lockedFilter, visibilityFilter, sortMethod, achievements]);
 
   const handleGameSearchChange = (event) => {
     setGameSearchTerm(event.target.value);

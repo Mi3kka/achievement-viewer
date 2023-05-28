@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { games } from '../../dummy-data/GameData';
 import GameCard from '../components/GameCard';
-import AllAchievementsContainer from '../components/AllAchievementsContainer'; // Renamed import
+import AllAchievementsContainer from '../components/AllAchievementsContainer';
 import '../../styles/AchievementsContainer.css';
 
 export default function AchievementsContainer() {
   const [gameList, setGameList] = useState(games);
-  const [sortType, setSortType] = useState('lastPlayed'); // default sort type
-  const [viewAll, setViewAll] = useState(false); // New state for toggling views
+  const [sortType, setSortType] = useState('lastPlayed');
+  const [viewAll, setViewAll] = useState(false);
+  const [selectedGame, setSelectedGame] = useState(null);
+  const [gameSearchTerm, setGameSearchTerm] = useState('');
 
   useEffect(() => {
     const sortGames = (type) => {
@@ -25,12 +27,26 @@ export default function AchievementsContainer() {
     setGameList(sortGames(sortType));
   }, [sortType]);
 
-  const handleViewAll = () => setViewAll(!viewAll); // New handler for toggling views
+  const handleViewAll = (game) => {
+    setViewAll(!viewAll);
+    setSelectedGame(game);
+    setGameSearchTerm(game.name);  // Assuming game is an object with a name property
+  };
+
+  const handleGameCardClick = (gameName) => {
+    setSelectedGame(gameName);
+    setViewAll(true);
+  };
 
   return (
     <div className="games-container">
       {viewAll ? (
-        <AllAchievementsContainer handleViewAll={handleViewAll} />
+        <AllAchievementsContainer
+        handleViewAll={handleViewAll}
+        selectedGame={selectedGame}
+        gameSearchTerm={gameSearchTerm}
+        setGameSearchTerm={setGameSearchTerm}
+      />
       ) : (
         <>
           <div className="sort-buttons">
@@ -54,7 +70,7 @@ export default function AchievementsContainer() {
           </div>
           <div className="games-list" style={{overflowY: 'scroll', maxHeight: '70vh'}}>
             {gameList.map((game) => (
-              <GameCard key={game.id} game={game} />
+              <GameCard key={game.id} game={game} onClick={() => handleGameCardClick(game.name)} />
             ))}
           </div>
         </>

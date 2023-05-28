@@ -1,31 +1,45 @@
+// AchievementsPage.js
+import { useState } from 'react';
 import Image from 'next/image';
 import AchievementsContainer from '../src/components/AchievementsContainer';
+import AllAchievementsContainer from '../src/components/AllAchievementsContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/AchievementsPage.css';
 import { games } from '../dummy-data/GameData';
 import AppFooter from '../app/AppFooter';
 import Footer from '@/app/footer';
 
-
 export default function Achievements() {
+  const [viewAll, setViewAll] = useState(false);
+  const [selectedGame, setSelectedGame] = useState(null);
   const username = 'Laenis';
   const overallAchievements = 122;
   const perfectGames = 5;
+
+  const handleViewAll = () => {
+    setViewAll(true);
+    setSelectedGame(null);
+  };
+
+  const handleGameCardClick = (gameName) => {
+    setViewAll(true);
+    setSelectedGame(gameName);
+  }
 
   return (
     <div className="container-fluid text-light py-3 achievements-container">
       <header className="rounded d-flex rounded justify-content-between align-items-center header-bar">
         <div className="d-flex align-items-center">
-          <div div className="d-flex align-items-center user-picture-container">
+          <div className="d-flex align-items-center user-picture-container">
             <div className="user-picture">
               <Image
                 src="/laenis_full.jpg"
                 alt="User Picture"
                 width={80}
                 height={80}
-                />
-              </div>
+              />
             </div>
+          </div>
           <div className="text-center ml-2 username">
             <div>{username}</div>
           </div>
@@ -43,7 +57,11 @@ export default function Achievements() {
           </div>
         </div>
       </header>
-      <AchievementsContainer games={games} />
+      {!viewAll ?
+        <AchievementsContainer games={games} onGameCardClick={handleGameCardClick} />
+        :
+        <AllAchievementsContainer selectedGame={selectedGame} handleViewAll={handleViewAll} />
+      }
       <AppFooter /> { Footer }
     </div>
   );
