@@ -1,0 +1,25 @@
+.app-footer {
+  background-color: #2a475e;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.3125rem;
+  max-width: 75rem;
+  margin: 2rem auto 0;
+}
+
+.app-footer-content {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .achievements-container {
+    padding: 1rem;
+  }
+
+  .app-footer {
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+}

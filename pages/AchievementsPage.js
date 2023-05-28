@@ -3,6 +3,9 @@ import AchievementsContainer from '../src/components/AchievementsContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/AchievementsPage.css';
 import { games } from '../dummy-data/GameData';
+import AppFooter from '../app/AppFooter';
+import Footer from '@/app/footer';
+
 
 export default function Achievements() {
   const username = 'Laenis';
@@ -41,6 +44,7 @@ export default function Achievements() {
         </div>
       </header>
       <AchievementsContainer games={games} />
+      <AppFooter /> { Footer }
     </div>
   );
 }

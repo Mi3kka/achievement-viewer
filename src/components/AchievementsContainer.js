@@ -30,7 +30,7 @@ export default function AchievementsContainer() {
   return (
     <div className="games-container">
       {viewAll ? (
-        <AllAchievementsContainer handleViewAll={handleViewAll} /> // Renamed component usage
+        <AllAchievementsContainer handleViewAll={handleViewAll} />
       ) : (
         <>
           <div className="sort-buttons">
@@ -52,7 +52,7 @@ export default function AchievementsContainer() {
             > Sort by: Completion
             </button>
           </div>
-          <div className="games-list" style={{overflowY: 'scroll', maxHeight: '85vh'}}>
+          <div className="games-list" style={{overflowY: 'scroll', maxHeight: '70vh'}}>
             {gameList.map((game) => (
               <GameCard key={game.id} game={game} />
             ))}
