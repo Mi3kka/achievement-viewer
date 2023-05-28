@@ -8,15 +8,15 @@ export default function GameCard({ game }) {
   // Calculate the color based on completion rate
   let percentageColor;
   if (completionPercentage <= 20) {
-    percentageColor = "#ff8080"; // pastel red
+    percentageColor = "#ff8080";
   } else if (completionPercentage <= 40) {
-    percentageColor = "#ffcc80"; // pastel orange
+    percentageColor = "#ffcc80";
   } else if (completionPercentage <= 60) {
-    percentageColor = "#ffff80"; // pastel yellow
+    percentageColor = "#ffff80";
   } else if (completionPercentage <= 80) {
-    percentageColor = "#ccff80"; // pastel light green
+    percentageColor = "#ccff80";
   } else {
-    percentageColor = "#80ffaa"; // pastel green
+    percentageColor = "#80ffaa";
   }
 
   return (
