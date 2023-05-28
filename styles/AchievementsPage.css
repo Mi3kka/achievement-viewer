@@ -45,7 +45,7 @@
   }
 
   .username {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-left: 0.4rem;
   }
 }
@@ -64,6 +64,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 1rem;
 }
 
 .achievement-text-container{
@@ -74,7 +75,7 @@
 
 .achievement-number,
 .achievement-text {
-  font-size: calc(min(max(10px + 1.2vw, 14px), 20px));
+  font-size: 1.5rem;
   color: #ffffff;
   white-space: nowrap;
 }
@@ -94,6 +95,6 @@
   }
   .achievement-number,
   .achievement-text {
-    font-size: 0.8rem;
+    font-size: 0.93rem;
   }
 }

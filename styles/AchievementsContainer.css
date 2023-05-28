@@ -4,13 +4,6 @@
   margin: 0 auto; /* Centers the container */
 }
 
-@media screen and (max-width: 600px) {
-  /* Resize game name text for smaller screens */
-  .game-card .game-name {
-    font-size: 1rem;
-  }
-}
-
 .sort-buttons {
   justify-content: space-between;
   margin-top: 1.4rem;

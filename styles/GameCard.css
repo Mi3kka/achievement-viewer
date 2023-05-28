@@ -4,12 +4,15 @@
   background-color: #1b2838;
   border: 1px solid #16202d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 120px;
 }
 
 .game-img {
   border-radius: 50%;
   border: 1px solid #16202d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 65px;
+  height: 65px;
 }
 
 .game-text-container {
@@ -17,11 +20,16 @@
 }
 
 .game-name {
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .achievement-total-container {
+  font-size: 1.2rem;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,15 +45,18 @@
 
 @media screen and (max-width: 600px) {
   .achievement-total-container {
-    width: 30px;
-    height: 30px;
-    font-size: 0.75rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
 }
 
 .game-achievement {
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   color: #66c0f4;
+  padding-left: 0.5rem;
+  padding-top: 0.8rem;
+
 }
 
 .game-trophy {
@@ -60,13 +71,16 @@
 
 @media screen and (max-width: 600px) {
   .game-img {
-    width: 30px;
-    height: 30px;
+    width: 52px;
+    height: 52px;
   }
 
-  .game-name,
+  .game-name {
+    font-size: 1.03rem;
+  }
+
   .game-achievement {
-    font-size: 0.81rem;
+    font-size: 1rem;
   }
 
   .trophy-img {

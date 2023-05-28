@@ -1,53 +1,108 @@
 /* AchievementCard.css */
 
 .achievement-card {
-  background-color: #1b2838;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border: 1px solid #16202d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 3em;
+  height: 200px;
+  overflow: hidden;
 }
 
 .achievement-img {
-  border-radius: 50%;
   border: 1px solid #16202d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-right: 0.8em;
+  width: 80px;
+  height: 80px;
 }
 
 .achievement-text-container {
   color: #ffffff;
+  flex: 2;
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.achievement-name {
+.achievement-game-name {
+  margin-top: 1.2rem;
+  margin-left: 1rem;
   font-weight: 700;
+  color: #ffffff;
+  font-size: 1.1rem;
   margin-bottom: 0.2rem;
 }
 
+.achievement-name {
+  margin-top: 1.2rem;
+  margin-left: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
 .achievement-description {
-  font-size: 0.85rem;
+  margin-left: 1rem;
+  font-size: 1.2rem;
   color: #66c0f4;
+  flex: 1;
 }
 
-.achievement-status {
-  font-size: 0.85rem;
-  color: #66c0f4;
-}
-
+.achievement-status,
 .achievement-unlock-percentage {
-  font-size: 0.85rem;
-  color: #66c0f4;
+  padding: 0.5rem;
+  padding-top: 1rem;
+  padding-left: 2.7rem;
+  font-size: 1.2rem;
+  color: #ffffff;
 }
 
 /* For smaller screens */
 
 @media screen and (max-width: 600px) {
   .achievement-img {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
+    margin-right: -0.8em;
   }
 
-  .achievement-name,
-  .achievement-description,
+  .achievement-card {
+    width: 100%; /* full width on smaller screens */
+    padding: 1em; /* reduced padding */
+    height: 140px;
+    padding: -4.5rem;
+  }
+
+  .achievement-status-container {
+    flex-direction: column;
+  }
+
+  .achievement-game-name {
+    font-size: 0.9rem; /* smaller font size */
+    margin-top: -0.6rem;
+    padding-bottom: 0.76rem; /* reduced margins */
+  }
+
+  .achievement-name {
+    margin-top: -0.6rem;
+    font-size: 1rem; /* smaller font size */
+    padding-bottom: -0.5rem; /* reduced margins */
+  }
+
+  .achievement-description {
+    font-size: 0.9rem; /* smaller font size */
+    line-height: 1.2; /* tighter line spacing *//* reduced margins */
+  }
+
   .achievement-status,
   .achievement-unlock-percentage {
-    font-size: 0.81rem;
+    font-size: 0.9rem; /* smaller font size */
+    padding: revert; /* reset padding */
   }
 }
