@@ -16,6 +16,7 @@ export default function GameCard({ game }) {
         <div className="ms-3 game-text-container">
           <h5 className="game-name">{game.name}</h5>
           <p className="game-achievement">{game.achievements.completed} / {game.achievements.total}</p>
+          <p className="last-played">{game.lastPlayed ? `Last Played: ${game.lastPlayed.toISOString().slice(0,10)}` : 'Never Played'}</p>
         </div>
         <div className="ms-auto achievement-total-container">
           <span className="achievement-total">{game.achievements.total}</span>

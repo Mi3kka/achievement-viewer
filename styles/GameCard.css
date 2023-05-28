@@ -4,7 +4,7 @@
   background-color: #1b2838;
   border: 1px solid #16202d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  height: 120px;
+  height: 125px;
 }
 
 .game-img {
@@ -20,11 +20,18 @@
 }
 
 .game-name {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  margin-bottom: 0.2rem;
-  padding-top: 0.5rem;
+  padding-top: 1.7rem;
   padding-left: 0.5rem;
+}
+
+.last-played {
+  font-size: 1.1rem;
+  color: #ccc;
+  padding-left: 0.5rem;
+  padding-bottom: 0.6rem;
+  margin-top: -1rem;
 }
 
 .achievement-total-container {
@@ -55,7 +62,7 @@
   font-size: 1.2rem;
   color: #66c0f4;
   padding-left: 0.5rem;
-  padding-top: 0.8rem;
+  margin-top: -0.5rem;
 
 }
 
@@ -77,6 +84,10 @@
 
   .game-name {
     font-size: 1.03rem;
+  }
+
+  .last-played {
+    font-size: 0.9rem;
   }
 
   .game-achievement {
