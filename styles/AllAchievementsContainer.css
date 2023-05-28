@@ -1,35 +1,138 @@
-.achievements-container {
-  max-width: 75rem;
-  min-width: 20rem;
-  margin: 0 auto; /* Centers the container */
+.achievements-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .back-button {
-  display: inline-block;
+  background-color: transparent;
   margin-top: 1.4rem;
-  margin-bottom: 1.5rem;
-  text-decoration: none;
-  color: #2a475e;
-  font-size: 1.5rem;
-}
-
-.achievements-list {
-  overflow-y: scroll;
-  max-height: 70vh;
-}
-
-.achievement-card {
-  background: #2a475e;
-  color: white;
   border: none;
-  padding: 1rem 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.3125rem;
+}
+
+.arrow-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.3125rem;
+  filter: invert(100%);
+}
+
+.back-button:hover {
+  background-color: #518abb;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
 }
 
 @media screen and (max-width: 600px) {
-  .achievement-card {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;  /* You can adjust this to suit your design */
+  .search-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.search-input {
+  width: 20rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+
+@media screen and (max-width: 800px) {
+  .search-input {
+    width: 16rem;
+    font-size: 0.9rem;
+  }
+}
+
+.search-input-container .search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa; /* Adjust color as needed */
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+}
+
+.filter-select {
+  padding: 5px;
+}
+
+.filter-input-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  background-color: #2a475e;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  margin-left: 0.25rem;
+  font-size: 1rem;
+}
+
+.filter-button:hover {
+  background-color: #518abb;
+}
+
+.filter-icon {
+  margin-right: 10px;
+  margin-left: 10px;
+  filter: invert(100%);
+}
+
+.filter-item {
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .filter-group {
+    flex-direction: column;
+  }
+
+  .filter-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .filter-select {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+.achievement-container {
+  overflow-y: scroll;
+  max-height: 70vh;
 }

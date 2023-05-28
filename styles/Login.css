@@ -3,7 +3,7 @@ body {
 }
 
 .main-content {
-  min-height: calc(90vh - 60px); /* adjust as needed */
+  min-height: calc(90vh - 60px);
 }
 
 .container {
@@ -36,14 +36,14 @@ body {
   color: #c7d5e0;
   background: #16202d;
   border-color: #66c0f4;
-  padding: 15px; /* Added padding */
+  padding: 15px;
 }
 
 .btn-user {
   color: #66c0f4;
   border-color: #66c0f4;
   background: #16202d;
-  padding: 20px; /* Increased padding */
+  padding: 20px;
   font-size: 1.2em;
   margin-top: 20px;
   margin-left: auto;

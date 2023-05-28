@@ -17,7 +17,7 @@
 
 @media screen and (max-width: 768px) {
   .header-bar {
-    padding: 10px 0; /* less padding for screens smaller than 768px */
+    padding: 10px 0;
   }
 }
 
@@ -46,7 +46,7 @@
 
   .username {
     font-size: 1.2rem;
-    margin-left: 0.4rem;  /* Reduced font size for small screens */
+    margin-left: 0.4rem;
   }
 }
 
@@ -76,7 +76,7 @@
 .achievement-text {
   font-size: calc(min(max(10px + 1.2vw, 14px), 20px));
   color: #ffffff;
-  white-space: nowrap;  /* Prevents text from wrapping */
+  white-space: nowrap;
 }
 
 .achievement-number {
@@ -90,7 +90,7 @@
 
 @media screen and (max-width: 600px) {
   .achievement-card {
-    margin-right: 1rem;  /* Reduced font size for small screens */
+    margin-right: 1rem;
   }
   .achievement-number,
   .achievement-text {

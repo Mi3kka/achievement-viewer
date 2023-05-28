@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react';
 import { games } from '../../dummy-data/GameData';
 import AchievementCard from '../components/AchievementCard';
 import '../../styles/AchievementsContainer.css';
+import '../../styles/AllAchievementsContainer.css';
+import Image from 'next/image';
+
 
 function AllAchievementsContainer({ handleViewAll }) {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [lockedFilter, setLockedFilter] = useState(null);
+  const [gameSearchTerm, setGameSearchTerm] = useState('');
+  const [achievementSearchTerm, setAchievementSearchTerm] = useState('');
+  const [lockedFilter, setLockedFilter] = useState(false);
   const [visibilityFilter, setVisibilityFilter] = useState(null);
   const [sortMethod, setSortMethod] = useState(null);
   const [filteredAchievements, setFilteredAchievements] = useState([]);
@@ -16,57 +20,126 @@ function AllAchievementsContainer({ handleViewAll }) {
   );
 
   useEffect(() => {
-    // Filter the achievements based on the search term
-    const lowerCaseSearchTerm = searchTerm.toLowerCase();
+    // Filter the achievements based on the game search term, achievement search term, locked filter, and visibility filter
+    const lowerCaseGameSearchTerm = gameSearchTerm.toLowerCase();
+    const lowerCaseAchievementSearchTerm = achievementSearchTerm.toLowerCase();
 
-    const newFilteredAchievements = achievements.filter(
-      (achievement) =>
-        achievement.name.toLowerCase().includes(lowerCaseSearchTerm) || // Check if the achievement name matches the search term
-        achievement.game.name.toLowerCase().includes(lowerCaseSearchTerm) // Check if the game name matches the search term
-    );
+    const newFilteredAchievements = achievements
+      .filter((achievement) => achievement.game.name.toLowerCase().includes(lowerCaseGameSearchTerm))
+      .filter(
+        (achievement) =>
+          achievement.name.toLowerCase().includes(lowerCaseAchievementSearchTerm) ||
+          achievement.game.name.toLowerCase().includes(lowerCaseAchievementSearchTerm)
+      )
+      .filter((achievement) => {
+        if (lockedFilter === null) return true;
+        return achievement.locked === lockedFilter;
+      })
+      .filter((achievement) => {
+        if (visibilityFilter === null) return true;
+        return achievement.hidden === visibilityFilter;
+      });
+
+    // Sort the achievements based on the sort method
+    if (sortMethod === 'globalUnlock') {
+      newFilteredAchievements.sort((a, b) => a.unlockPercentage - b.unlockPercentage);
+    } else if (sortMethod === 'unlockDate') {
+      newFilteredAchievements.sort((a, b) => {
+        const aUnlockDate = a.unlockDate || new Date(0);
+        const bUnlockDate = b.unlockDate || new Date(0);
+        return aUnlockDate - bUnlockDate;
+      });
+    }
 
     setFilteredAchievements(newFilteredAchievements);
-  }, [searchTerm, achievements]); // Add `achievements` as a dependency
+  }, [gameSearchTerm, achievementSearchTerm, lockedFilter, visibilityFilter, sortMethod, achievements]); // Add `gameSearchTerm` and `achievementSearchTerm` as dependencies
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
+  const handleGameSearchChange = (event) => {
+    setGameSearchTerm(event.target.value);
+  };
+
+  const handleAchievementSearchChange = (event) => {
+    setAchievementSearchTerm(event.target.value);
   };
 
   const handleLockedFilterChange = (event) => {
-    setLockedFilter(event.target.value);
-    // Implement locked/unlocked filter logic here
+    const value = event.target.value === 'true' ? true : event.target.value === 'false' ? false : null;
+    setLockedFilter(value);
   };
 
   const handleVisibilityFilterChange = (event) => {
-    setVisibilityFilter(event.target.value);
-    // Implement visibility on/off filter logic here
+    const value = event.target.value === 'true' ? true : event.target.value === 'false' ? false : null;
+    setVisibilityFilter(value);
   };
 
   const handleSortMethodChange = (event) => {
     setSortMethod(event.target.value);
-    // Implement sort logic here
   };
 
   return (
     <div>
-      <button onClick={handleViewAll}>Back</button>
-      <input type="text" placeholder="Search..." onChange={handleSearchChange} value={searchTerm} />
-      <select onChange={handleLockedFilterChange} value={lockedFilter}>
-        <option value={null}>All</option>
-        <option value={true}>Locked</option>
-        <option value={false}>Unlocked</option>
-      </select>
-      <select onChange={handleVisibilityFilterChange} value={visibilityFilter}>
-        <option value={null}>All</option>
-        <option value={true}>Visible</option>
-        <option value={false}>Hidden</option>
-      </select>
-      <select onChange={handleSortMethodChange} value={sortMethod}>
-        <option value={null}>No Sort</option>
-        <option value="globalUnlock">Global Unlocks</option>
-        <option value="unlockDate">Unlock Date</option>
-      </select>
-      <div className="achievement-container" style={{ overflowY: 'scroll', maxHeight: '80vh' }}>
+      <div className="achievements-page-header">
+        <button className="back-button" onClick={handleViewAll}>
+          <Image src="/icons/arrow-left.svg" alt="Back" width={24} height={24} className="arrow-icon"/>
+          </button>
+        <div className="search-container">
+          <div className="search-input-container">
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Sort by game"
+              onChange={handleGameSearchChange}
+              value={gameSearchTerm}
+            />
+          <Image src="/icons/magnifying-glass.svg" alt="Search icon" width={20} height={20} className="search-icon"/>
+        </div>
+          <div className="search-input-container">
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Sort by achievement"
+              onChange={handleAchievementSearchChange}
+              value={achievementSearchTerm}
+            />
+            <Image src="/icons/magnifying-glass.svg" alt="Search icon" width={20} height={20} className="search-icon"/>
+          </div>
+        </div>
+      </div>
+        <div className="filter-container">
+          <div className="filter-input-container">
+            <Image
+              src={lockedFilter ? "/icons/lock-closed.svg" : "/icons/lock-open.svg"}
+              alt="Lock icon"
+              width={30} height={30} className="filter-icon"
+            />
+            <select className="filter-select" onChange={handleLockedFilterChange} value={lockedFilter}>
+              <option value={null}>All</option>
+              <option value={true}>Locked</option>
+              <option value={false}>Unlocked</option>
+            </select>
+          </div>
+          <div className="filter-input-container">
+            <Image
+              src={visibilityFilter === null || visibilityFilter ? "/icons/visibility.svg" : "/icons/visibility-off.svg"}
+              alt="Visibility Filter Icon"
+              width={30} height={30} className="filter-icon"
+              />
+            <select onChange={handleVisibilityFilterChange} value={visibilityFilter}>
+              <option value={null}>All</option>
+              <option value={true}>Visible</option>
+              <option value={false}>Hidden</option>
+            </select>
+          </div>
+          <div className="filter-input-container">
+            <Image src="/icons/filter.svg" alt="Filter icon" width={30} height={30} className="filter-icon"/>
+            <select onChange={handleSortMethodChange} value={sortMethod}>
+              <option value={null}>No Sort</option>
+              <option value="globalUnlock">Global Unlocks</option>
+              <option value="unlockDate">Unlock Date</option>
+            </select>
+          </div>
+        </div>
+      <div className="achievement-container">
         {filteredAchievements.map((achievement) => (
           <AchievementCard key={`${achievement.id}-${achievement.game.id}`} achievement={achievement} />
         ))}
@@ -74,5 +147,6 @@ function AllAchievementsContainer({ handleViewAll }) {
     </div>
   );
 }
+
 
 export default AllAchievementsContainer;

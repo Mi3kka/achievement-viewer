@@ -315,7 +315,7 @@ export const games = [
       },
       {
         id: 3,
-        name: "Joja Co. Member",
+        name: "Joja Co. Member of Portal",
         description: "Become a member of Joja Co.",
         locked: true,
         unlockDate: null,

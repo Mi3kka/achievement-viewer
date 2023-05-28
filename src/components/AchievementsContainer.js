@@ -52,7 +52,7 @@ export default function AchievementsContainer() {
             > Sort by: Completion
             </button>
           </div>
-          <div className="games-list" style={{overflowY: 'scroll', maxHeight: '80vh'}}>
+          <div className="games-list" style={{overflowY: 'scroll', maxHeight: '85vh'}}>
             {gameList.map((game) => (
               <GameCard key={game.id} game={game} />
             ))}
