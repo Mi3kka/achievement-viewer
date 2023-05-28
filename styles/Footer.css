@@ -5,6 +5,16 @@
   padding: 10px 0;
 }
 
+.year-text {
+  margin: 10px;
+}
+
 .git-link {
   margin-top: 1.2rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
