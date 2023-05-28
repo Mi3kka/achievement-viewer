@@ -80,8 +80,8 @@ function AllAchievementsContainer({ handleViewAll }) {
     <div>
       <div className="achievements-page-header">
         <button className="back-button" onClick={handleViewAll}>
-          <Image src="/icons/arrow-left.svg" alt="Back" width={24} height={24} className="arrow-icon"/>
-          </button>
+          <Image src="/icons/arrow-left.svg" alt="Back" width={30} height={30} />
+        </button>
         <div className="search-container">
           <div className="search-input-container">
             <input
@@ -106,7 +106,7 @@ function AllAchievementsContainer({ handleViewAll }) {
         </div>
       </div>
         <div className="filter-container">
-          <div className="filter-input-container">
+          <div className="filter-section">
             <Image
               src={lockedFilter ? "/icons/lock-closed.svg" : "/icons/lock-open.svg"}
               alt="Lock icon"
@@ -118,21 +118,21 @@ function AllAchievementsContainer({ handleViewAll }) {
               <option value={false}>Unlocked</option>
             </select>
           </div>
-          <div className="filter-input-container">
+          <div className="filter-section">
             <Image
               src={visibilityFilter === null || visibilityFilter ? "/icons/visibility.svg" : "/icons/visibility-off.svg"}
               alt="Visibility Filter Icon"
               width={30} height={30} className="filter-icon"
               />
-            <select onChange={handleVisibilityFilterChange} value={visibilityFilter}>
+            <select className="filter-select" onChange={handleVisibilityFilterChange} value={visibilityFilter}>
               <option value={null}>All</option>
               <option value={true}>Visible</option>
               <option value={false}>Hidden</option>
             </select>
           </div>
-          <div className="filter-input-container">
+          <div className="filter-section">
             <Image src="/icons/filter.svg" alt="Filter icon" width={30} height={30} className="filter-icon"/>
-            <select onChange={handleSortMethodChange} value={sortMethod}>
+            <select className="filter-select" onChange={handleSortMethodChange} value={sortMethod}>
               <option value={null}>No Sort</option>
               <option value="globalUnlock">Global Unlocks</option>
               <option value="unlockDate">Unlock Date</option>

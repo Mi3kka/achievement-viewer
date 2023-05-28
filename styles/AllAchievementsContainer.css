@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; /* Added this line */
   margin-bottom: 1rem;
 }
 
@@ -13,15 +14,15 @@
   margin-right: 0.3125rem;
 }
 
-.arrow-icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 0.3125rem;
-  filter: invert(100%);
+.back-button:hover {
+  border-radius: 50%; /* Make the icon round */
+  width: 2.8rem;
+  height: 2.8rem;
 }
 
-.back-button:hover {
-  background-color: #518abb;
+.arrow-icon {
+  width: 2.8rem;
+  height: 2.8rem;
 }
 
 .search-container {
@@ -31,7 +32,7 @@
   margin-top: 1.4rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
   .search-container {
     flex-direction: column;
     align-items: flex-start;
@@ -45,14 +46,24 @@
 .search-input {
   width: 20rem;
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.12rem;
 }
-
 
 @media screen and (max-width: 800px) {
   .search-input {
-    width: 16rem;
-    font-size: 0.9rem;
+    width: 17.2rem;
+    font-size: 1.03rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .search-input {
+    width: 16.8rem;
+    font-size: 1.1rem;
+  }
+
+  .search-input-container {
+    margin-right: 0.5rem;
   }
 }
 
@@ -60,20 +71,55 @@
   position: absolute;
   right: 10px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-40%);
   color: #aaa; /* Adjust color as needed */
+  border: none;
 }
 
 .search-field {
   display: flex;
   align-items: center;
+  border: none;
 }
 
 .filter-container {
   display: flex;
-  justify-content: space-between;
   justify-content: flex-end;
-  margin-bottom: 1rem;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+}
+
+.filter-input-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  max-width: 150px;
+  flex-shrink: 1;
+}
+
+.filter-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(/icons/arrow-down.svg) no-repeat right, #2a475e;
+  background-size: 20px;
+  background-position: right 10px center;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 33px 8px 8px;
+  font-size: 1rem;
+}
+
+.filter-select:hover, .filter-select:focus {
+  background-color: #518abb;
+  outline: none;
+}
+
+.filter-icon {
+  margin-right: 15px;
+  margin-left: 10px;
+  filter: invert(100%);
 }
 
 .filter-group {
@@ -81,13 +127,10 @@
   align-items: center;
 }
 
-.filter-select {
-  padding: 5px;
-}
-
-.filter-input-container {
+.filter-section {
   display: flex;
-  margin-bottom: 20px;
+  align-items: center;
+  margin: 10px;
 }
 
 .filter-button {
@@ -110,6 +153,7 @@
 .filter-icon {
   margin-right: 10px;
   margin-left: 10px;
+  margin-top: 5px;
   filter: invert(100%);
 }
 
@@ -117,21 +161,50 @@
   position: relative;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 768px) {
+  .filter-container {
+    justify-content: flex-end;
+  }
+  .filter-section {
+    margin: 0;
+  }
+  .filter-select {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .filter-group {
     flex-direction: column;
   }
 
+  .filter-container {
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
   .filter-icon {
+    margin-top: 5px;
     width: 30px;
     height: 30px;
   }
 
   .filter-select {
-    width: 100%;
+    width: 30%;
     margin-top: 5px;
+    font-size: 1.1rem;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .filter-select {
+    width: 20%;
+    font-size: 0.8rem;
+  }
+}
+
 .achievement-container {
   overflow-y: scroll;
   max-height: 70vh;
