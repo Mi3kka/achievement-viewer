@@ -8,10 +8,10 @@ import '../../styles/AchievementContainer.css';
 import Image from 'next/image';
 
 
-function AchievementContainer({ handleViewAll, selectedGame }) {
+function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter = null }) {
   const [gameSearchTerm, setGameSearchTerm] = useState(selectedGame ? selectedGame.name : '');
   const [achievementSearchTerm, setAchievementSearchTerm] = useState('');
-  const [lockedFilter, setLockedFilter] = useState(false);
+  const [lockedFilter, setLockedFilter] = useState(initialLockedFilter);
   const [visibilityFilter, setVisibilityFilter] = useState(null);
   const [sortMethod, setSortMethod] = useState(null);
   const [filteredAchievements, setFilteredAchievements] = useState([]);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { games } from '../../dummy-data/GameData';
 import GameCard from './GameCard';
-import AllAchievementsContainer from './AchievementContainer';
+import AchievementContainer from './AchievementContainer';
 import '../../styles/GameCardContainer.css';
 
 // Utility function for sorting games.
@@ -24,27 +24,31 @@ export default function GameCardContainer() {
   const [sortType, setSortType] = useState('lastPlayed');
   const [viewAll, setViewAll] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
+  const [initialLockedFilter, setInitialLockedFilter] = useState(null);
 
   useEffect(() => {
     setGameList(sortGames(games, sortType));
   }, [sortType]);
 
   const handleViewAll = () => {
-    setSelectedGame(null);  // Set selectedGame to null when viewing all achievements
+    setSelectedGame(null);
+    setInitialLockedFilter(false);  // Set selectedGame to null when viewing all achievements
     setViewAll(!viewAll);
   };
 
   const handleGameCardClick = (game) => {
     setSelectedGame(game);
+    setInitialLockedFilter(null);
     setViewAll(true);
   };
 
   return (
     <div className="games-container">
       {viewAll ? (
-        <AllAchievementsContainer
+        <AchievementContainer
           handleViewAll={handleViewAll}
           selectedGame={selectedGame}
+          initialLockedFilter={initialLockedFilter}
         />
       ) : (
         <>

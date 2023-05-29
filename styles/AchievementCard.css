@@ -11,6 +11,12 @@
   overflow: hidden;
 }
 
+.achievement-card.locked {
+  opacity: 0.65; /* Adjust as needed */
+  /* Optionally change the background color */
+  /* background-color: #808080; */
+}
+
 .achievement-img {
   border: 1px solid #16202d;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
