@@ -1,15 +1,15 @@
-// AchievementsPage.js
+// MainView.js
 import { useState } from 'react';
 import Image from 'next/image';
-import AchievementsContainer from '../src/components/AchievementsContainer';
-import AllAchievementsContainer from '../src/components/AllAchievementsContainer';
+import GameCardContainer from '../src/components/GameCardContainer';
+import AchievementContainer from '../src/components/AchievementContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/AchievementsPage.css';
+import '../styles/MainView.css';
 import { games } from '../dummy-data/GameData';
 import AppFooter from '../app/AppFooter';
 import Footer from '@/app/footer';
 
-export default function Achievements() {
+export default function MainView() {
   const [viewAll, setViewAll] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
   const username = 'Laenis';
@@ -57,11 +57,7 @@ export default function Achievements() {
           </div>
         </div>
       </header>
-      {!viewAll ?
-        <AchievementsContainer games={games} onGameCardClick={handleGameCardClick} />
-        :
-        <AllAchievementsContainer selectedGame={selectedGame} handleViewAll={handleViewAll} />
-      }
+      <GameCardContainer games={games} onGameCardClick={handleGameCardClick} />
       <AppFooter /> { Footer }
     </div>
   );

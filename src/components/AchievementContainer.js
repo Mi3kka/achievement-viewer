@@ -1,13 +1,15 @@
+//AchievementContainer.js
+
 import { useState, useEffect } from 'react';
 import { games } from '../../dummy-data/GameData';
-import AchievementCard from '../components/AchievementCard';
-import '../../styles/AchievementsContainer.css';
-import '../../styles/AllAchievementsContainer.css';
+import AchievementCard from './AchievementCard';
+import '../../styles/GameCardContainer.css';
+import '../../styles/AchievementContainer.css';
 import Image from 'next/image';
 
 
-function AllAchievementsContainer({ handleViewAll }) {
-  const [gameSearchTerm, setGameSearchTerm] = useState('');
+function AchievementContainer({ handleViewAll, selectedGame }) {
+  const [gameSearchTerm, setGameSearchTerm] = useState(selectedGame ? selectedGame.name : '');
   const [achievementSearchTerm, setAchievementSearchTerm] = useState('');
   const [lockedFilter, setLockedFilter] = useState(false);
   const [visibilityFilter, setVisibilityFilter] = useState(null);
@@ -149,4 +151,4 @@ function AllAchievementsContainer({ handleViewAll }) {
 }
 
 
-export default AllAchievementsContainer;
+export default AchievementContainer;

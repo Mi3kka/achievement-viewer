@@ -45,7 +45,7 @@ export default function Login() {
                       </div>
                       <button
                         className="btn btn-dark btn-lg btn-user btn-block"
-                        type="submit"onClick={() => router.replace('../AchievementsPage')}>
+                        type="submit"onClick={() => router.replace('../MainView')}>
                           Login
                       </button>
                     </form>
