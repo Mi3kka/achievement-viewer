@@ -7,19 +7,22 @@ import '../../styles/GameCardContainer.css';
 import '../../styles/AchievementContainer.css';
 import Image from 'next/image';
 
-
 function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter = null }) {
   const [gameSearchTerm, setGameSearchTerm] = useState(selectedGame ? selectedGame.name : '');
   const [achievementSearchTerm, setAchievementSearchTerm] = useState('');
   const [lockedFilter, setLockedFilter] = useState(initialLockedFilter);
   const [visibilityFilter, setVisibilityFilter] = useState(null);
   const [sortMethod, setSortMethod] = useState(null);
+  const [achievements, setAchievements] = useState([]);
   const [filteredAchievements, setFilteredAchievements] = useState([]);
 
-  const achievements = games.reduce(
-    (acc, game) => [...acc, ...game.achievementsList.map((achievement) => ({ ...achievement, game }))],
-    []
-  );
+  useEffect(() => {
+    const achievementList = games.reduce(
+        (acc, game) => [...acc, ...game.achievementsList.map((achievement) => ({ ...achievement, game }))],
+        []
+    );
+    setAchievements(achievementList);
+  }, [games]);
 
   useEffect(() => {
     // Filter the achievements based on the game search term, achievement search term, locked filter, and visibility filter
@@ -38,18 +41,28 @@ function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter
         return achievement.locked === lockedFilter;
       })
       .filter((achievement) => {
+        // If visibilityFilter is null, don't filter out any achievements based on visibility
         if (visibilityFilter === null) return true;
-        return achievement.hidden === visibilityFilter;
-      });
+        // If visibilityFilter is true, only filter out hidden achievements
+        if (visibilityFilter === true) return !achievement.hidden;
+        // If visibilityFilter is false, only show hidden achievements
+        return achievement.hidden;
+    })
 
     // Sort the achievements based on the sort method
     if (sortMethod === 'globalUnlock') {
       newFilteredAchievements.sort((a, b) => a.unlockPercentage - b.unlockPercentage);
-    } else if (sortMethod === 'unlockDate') {
+    } else if (sortMethod === 'unlockDateDesc') {
       newFilteredAchievements.sort((a, b) => {
         const aUnlockDate = a.unlockDate || new Date(0);
         const bUnlockDate = b.unlockDate || new Date(0);
-        return aUnlockDate - bUnlockDate;
+        return bUnlockDate - aUnlockDate;  // This will place the newest date at the top
+      });
+    } else if (sortMethod === 'unlockDateAsc') {
+      newFilteredAchievements.sort((a, b) => {
+        const aUnlockDate = a.unlockDate || new Date(0);
+        const bUnlockDate = b.unlockDate || new Date(0);
+        return aUnlockDate - bUnlockDate; // This will place the oldest date at the top
       });
     }
 
@@ -110,7 +123,7 @@ function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter
         <div className="filter-container">
           <div className="filter-section">
             <Image
-              src={lockedFilter ? "/icons/lock-closed.svg" : "/icons/lock-open.svg"}
+              src={lockedFilter ? "/icons/lock-close.svg" : "/icons/lock-open.svg"}
               alt="Lock icon"
               width={30} height={30} className="filter-icon"
             />
@@ -137,14 +150,15 @@ function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter
             <select className="filter-select" onChange={handleSortMethodChange} value={sortMethod}>
               <option value={null}>No Sort</option>
               <option value="globalUnlock">Global Unlocks</option>
-              <option value="unlockDate">Unlock Date</option>
+              <option value="unlockDateDesc">Unlock Date 🔽</option>
+              <option value="unlockDateAsc">Unlock Date 🔼</option>
             </select>
           </div>
         </div>
-      <div className="achievement-container">
-        {filteredAchievements.map((achievement) => (
-          <AchievementCard key={`${achievement.id}-${achievement.game.id}`} achievement={achievement} />
-        ))}
+        <div className="achievement-container">
+          {filteredAchievements.map((achievement) => (
+            <AchievementCard key={`${achievement.id}-${achievement.game.id}`} achievement={achievement} visibilityFilter={visibilityFilter} />
+          ))}
       </div>
     </div>
   );

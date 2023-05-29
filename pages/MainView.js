@@ -58,7 +58,7 @@ export default function MainView() {
         </div>
       </header>
       <GameCardContainer games={games} onGameCardClick={handleGameCardClick} />
-      <AppFooter /> { Footer }
+      <AppFooter />
     </div>
   );
 }

@@ -93,8 +93,13 @@
   .achievement-card {
     margin-right: 1rem;
   }
+
+  .achievement-header {
+    padding: revert;
+  }
   .achievement-number,
   .achievement-text {
     font-size: 0.93rem;
+    margin-right: 0.4rem;
   }
 }

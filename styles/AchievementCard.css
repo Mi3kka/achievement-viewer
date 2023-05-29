@@ -12,9 +12,11 @@
 }
 
 .achievement-card.locked {
-  opacity: 0.65; /* Adjust as needed */
-  /* Optionally change the background color */
-  /* background-color: #808080; */
+  opacity: 0.65;
+}
+
+.achievement-card .hidden {
+  filter: blur(5px);
 }
 
 .achievement-img {
@@ -36,7 +38,7 @@
 }
 
 .achievement-game-name {
-  margin-top: 1.2rem;
+  margin-top: 0.8rem;
   margin-left: 1rem;
   font-weight: 700;
   color: #ffffff;
@@ -45,7 +47,7 @@
 }
 
 .achievement-name {
-  margin-top: 1.2rem;
+  margin-top: 1rem;
   margin-left: 1rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
@@ -79,8 +81,8 @@
   }
 
   .achievement-card {
-    width: 100%; /* full width on smaller screens */
-    padding: 1em; /* reduced padding */
+    width: 100%;
+    padding: 1em;
     height: 140px;
     padding: -4.5rem;
   }
@@ -90,25 +92,31 @@
   }
 
   .achievement-game-name {
-    font-size: 0.9rem; /* smaller font size */
-    margin-top: -0.6rem;
-    padding-bottom: 0.76rem; /* reduced margins */
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    padding-bottom: 0.76rem;
   }
 
   .achievement-name {
     margin-top: -0.6rem;
-    font-size: 1rem; /* smaller font size */
-    padding-bottom: -0.5rem; /* reduced margins */
+    font-size: 1rem;
   }
 
   .achievement-description {
-    font-size: 0.9rem; /* smaller font size */
-    line-height: 1.2; /* tighter line spacing *//* reduced margins */
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 
   .achievement-status,
   .achievement-unlock-percentage {
-    font-size: 0.9rem; /* smaller font size */
-    padding: revert; /* reset padding */
+    font-size: 0.9rem;
+    padding: revert;
   }
+}
+
+@media screen and (max-width: 500px) {
+  .achievement-status-container {
+    display: none;
+  }
+
 }

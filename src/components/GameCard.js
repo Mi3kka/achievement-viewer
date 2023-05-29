@@ -5,18 +5,18 @@ import '../../styles/GameCard.css';
 export default function GameCard({ game, onClick }) {
   const completionPercentage = Math.floor((game.achievements.completed / game.achievements.total) * 100);
 
-  // Calculate the color based on completion rate
+ // Calculate the color based on completion rate
   let percentageColor;
   if (completionPercentage <= 20) {
-    percentageColor = "#ff8080";
+    percentageColor = "rgba(255,128,128,0.5)";
   } else if (completionPercentage <= 40) {
-    percentageColor = "#ffcc80";
+    percentageColor = "rgba(255,204,128,0.5)";
   } else if (completionPercentage <= 60) {
-    percentageColor = "#ffff80";
+    percentageColor = "rgba(255,255,128,0.5)";
   } else if (completionPercentage <= 80) {
-    percentageColor = "#ccff80";
+    percentageColor = "rgba(204,255,128,0.5)";
   } else {
-    percentageColor = "#80ffaa";
+    percentageColor = "rgba(128,255,170,0.5)";
   }
 
   return (
