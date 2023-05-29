@@ -29,9 +29,9 @@ export default function GameCardContainer() {
     setGameList(sortGames(games, sortType));
   }, [sortType]);
 
-  const handleViewAll = (game) => {
+  const handleViewAll = () => {
+    setSelectedGame(null);  // Set selectedGame to null when viewing all achievements
     setViewAll(!viewAll);
-    setSelectedGame(game);
   };
 
   const handleGameCardClick = (game) => {
