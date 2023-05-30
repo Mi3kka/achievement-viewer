@@ -103,7 +103,7 @@ Main application view:
 Achievement view:
 ![Main view](docs/screenshots/achievement-view.png)
 
-Mobile view (in achievement view):
+Mobile view:
 ![Main view](docs/screenshots/mobile-view.png)
 
 ## License
