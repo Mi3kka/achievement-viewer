@@ -6,7 +6,7 @@ export const games = [
     name: "Half-Life 2",
     image: "/pictures/hl2.png",
     achievements: {
-      completed: 20,
+      completed: 19,
       total: 33,
     },
     lastPlayed: new Date('2023-05-03'),
@@ -90,7 +90,7 @@ export const games = [
     name: "Team Fortress 2",
     image: "/pictures/tf2.png",
     achievements: {
-      completed: 100,
+      completed: 99,
       total: 520,
     },
     lastPlayed: new Date('2023-05-05'),
@@ -246,7 +246,7 @@ export const games = [
     name: "The Elder Scrolls V: Skyrim",
     image: "/pictures/skyrim.png",
     achievements: {
-      completed: 40,
+      completed: 75,
       total: 75,
     },
     lastPlayed: new Date('2023-05-18'),
@@ -288,10 +288,10 @@ export const games = [
     name: "Stardew Valley",
     image: "/pictures/stardew_valley.png",
     achievements: {
-      completed: 20,
+      completed: 18,
       total: 40,
     },
-    lastPlayed: new Date('2023-05-15'),
+    lastPlayed: new Date('2023-05-20'),
     achievementsList: [
       {
         id: 1,

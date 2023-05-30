@@ -9,24 +9,24 @@ export default function GameCard({ game, onClick }) {
   // Calculate the completion percentage
   const completionPercentage = Math.floor((game.achievements.completed / game.achievements.total) * 100);
 
- // Calculate the color based on completion rate, using rgba  to set the opacity lower
+  // Calculate the color based on completion rate, using rgba to set the opacity lower.
   let percentageColor;
   if (completionPercentage <= 20) {
-    percentageColor = "rgba(255,128,128,0.5)";
+    percentageColor = "rgba(255,128,128,0.5)"; // Red
   } else if (completionPercentage <= 40) {
-    percentageColor = "rgba(255,204,128,0.5)";
+    percentageColor = "rgba(255,165,0,0.5)"; // Orange
   } else if (completionPercentage <= 60) {
-    percentageColor = "rgba(255,255,128,0.5)";
+    percentageColor = "rgba(255,255,128,0.5)"; // Yellow
   } else if (completionPercentage <= 80) {
-    percentageColor = "rgba(204,255,128,0.5)";
+    percentageColor = "rgba(204,255,128,0.5)"; // Light Green
   } else {
-    percentageColor = "rgba(128,255,170,0.5)";
+    percentageColor = "rgba(128,255,170,0.5)"; // Green
   }
 
   return (
     <div
       className="d-flex align-items-center bg-dark rounded px-3 py-2 mb-3 game-card"
-      onClick={onClick} // When the card is clicked, call onClick and pass prop "game"
+      onClick={onClick}
     >
       <Image
         className="game-img"
@@ -39,22 +39,23 @@ export default function GameCard({ game, onClick }) {
         <h5 className="game-name">{game.name}</h5>
         <p className="game-achievement">{game.achievements.completed} / {game.achievements.total}</p>
         <p className="last-played">{game.lastPlayed ? `Last Played: ${game.lastPlayed.toISOString().slice(0,10)}` : 'Never Played'}</p>
-        {/* If the game has never been played, display "Never Played" */}
       </div>
-      <div className="ms-auto achievement-total-container" style={{backgroundColor: percentageColor}}>
-        <span className="achievement-total">{completionPercentage}%</span>
-      </div>
-      {game.achievements.completed === game.achievements.total &&
-        <div className="ms-2 game-trophy">
-          <Image
-            className="complete-check-img"
-            src="/icons/complete-check.svg"
-            alt="All achievements unlocked."
-            width={25}
-            height={25}
-          />
+      <div className="ms-auto achievement-info-container">
+        {game.achievements.completed === game.achievements.total &&
+          <div className="game-completion-check">
+            <Image
+              className="complete-check-img"
+              src="/icons/complete-check.svg"
+              alt="All achievements unlocked."
+              width={45}
+              height={45}
+            />
+          </div>
+        }
+        <div className="achievement-total-container" style={{backgroundColor: percentageColor}}>
+          <span className="achievement-total">{completionPercentage}%</span>
         </div>
-      }
+      </div>
     </div>
   );
 }

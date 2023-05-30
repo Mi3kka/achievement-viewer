@@ -145,7 +145,7 @@ The dummy data is stored in the `dummy-data.js` file. This data works as the mak
 - `id`: A unique identifier for the game. This is used to identify the game when passing data between components.
 - `name`: The name of the game.
 - `icon`: The URL/directory of the game's icon.
-- `achievements`: The sum of your unlocked achievements and the total amount of achievements in the game. This is used to calculate the completion percentage, but does not represent the actual number of achievements we store in the dummy data. It purely for demonstration purposes.
+- `achievements`: The sum of your unlocked achievements and the total amount of achievements in the game. This is used to calculate the completion percentage and a special badge for 100%, but does not represent the actual number of achievements we store in the dummy data. It is purely for demonstration purposes.
 - `lastPlayed`: The date the game was last played.
 - `achievementList`: An array of achievement objects. Each achievement object contains the following properties:
   - `id`: A unique identifier for the achievement. This is used to identify the achievement when passing data between components.

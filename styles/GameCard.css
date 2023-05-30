@@ -62,26 +62,27 @@
   color: #66c0f4;
   padding-left: 0.5rem;
   margin-top: -0.5rem;
-
 }
 
-.game-trophy {
-
+.achievement-info-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .complete-check-img {
-  width: 20px;
-  height: 20px;
-  margin-left: 0.5rem;
-  margin-top: -0.5rem;
+  width: 4.2rem;
+  height: 4.2rem;
+  padding-right: 0.5rem;
+  animation: glimmer 2s forwards;
 }
 
 /* For mobile devices */
 
 @media screen and (max-width: 600px) {
   .achievement-total-container {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     font-size: 1rem;
   }
 
@@ -98,12 +99,36 @@
     font-size: 0.9rem;
   }
 
+  .achievement-info-container {
+    gap: 2px;
+  }
+
+  .complete-check-img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
   .game-achievement {
     font-size: 1rem;
   }
+}
 
-  .trophy-img {
-    width: 15px;
-    height: 15px;
+/* Glimmer effect for the 100% mark */
+
+@keyframes glimmer {
+  0% {
+    opacity: 0.3;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
