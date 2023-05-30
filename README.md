@@ -81,7 +81,7 @@ This application is organized into the following directories:
 
 ## Documentation
 
-Please read the `documentation.md` inside the docs folder for more information on the application's design and implementation.
+Please read the [documentation file](docs/documentation.md) in the docs directory for more information on the application's design and implementation.
 
 Of course, there are also several comments throughout the code that explain the functionality of the application in more detail.
 

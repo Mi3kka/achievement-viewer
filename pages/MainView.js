@@ -17,8 +17,8 @@ export default function MainView() {
 
   // The username, overall achievement count, perfect game count, and profile picture are hardcoded for now
   const username = 'Laenis';
-  const overallAchievements = 122;
-  const perfectGames = 5;
+  const overallAchievements = 154;
+  const perfectGames = 1;
   const picture = '/laenis_full.jpg';
 
   // Function to handle when a game card is clicked, sets the selected game name and passes it
