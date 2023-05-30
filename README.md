@@ -91,8 +91,9 @@ Of course, there are also several comments throughout the code that explain the 
 - Add user authentication along with Steam and other platforms, which store game achievements (e.g. Xbox, PlayStation, etc.)
 
 ## Credits
-- [Anniina Talja (for UI/UX design)](https://www.utu.fi/fi/ihmiset/anniina-talja)
-- [Steam](https://store.steampowered.com/)
+- **Anniina Talja**: UI & UX design, mockup, data modeling, and testing. Uses this web application in her thesis.
+- **Julius Virtanen**: Implementation of the front end application, routing, state management, data flow and testing. Also wrote documentation.
+- **Valve**: Inspiration for the UI design.
 
 ## License
 
