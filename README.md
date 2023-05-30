@@ -25,25 +25,25 @@ The application is hosted on Vercel and can be accessed at the following URL:
 
 ## Installation and development setup
 
-1. Clone the repository:
+1. **Clone the repository:**
 
 ```git clone https://github.com/Mi3kka/achievement-viewer.git```
 
-2. Install Node.js and npm if you don't have them already:
+2. **Install Node.js and npm if you don't have them already:**
 
 [https://nodejs.org/en/](https://nodejs.org/en/)
 
 This app works best with Node.js version 18.16.0.
 
-3. Install dependencies:
+3. **Install dependencies:**
 
 ```npm install```
 
-4. Run the development server:
+4. **Run the development server:**
 
 ```npm run dev```
 
-5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. **Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.**
 
 Development should be done on a feature branch. Once the feature is complete, create a pull request to merge the feature branch into the main branch.
 
@@ -58,15 +58,21 @@ Development should be done on a feature branch. Once the feature is complete, cr
 - [Prettier (for code formatting)](https://prettier.io/)
 - [Vercel (for hosting)](https://vercel.com/)
 
-## Project structure
+## 📂 Project Structure
 
-- **app** - Contains the login page and the initial page that is displayed when a client loads web application. The login page is not functional, but it is there to simulate a login page. Also contains footers, which are used on all pages.
-- **pages** - Contains the main view page that is the entry point of the application. Can be extended to cover other pages as well.
-- **src/components** - Contains React components that are used to build the application UI. For example the achievement container is a component, and that component houses achievement cards, which are also components.
-- **dummy-data** - Contains the dummy-data.js file, which is used to populate the application with data.
-- **public** - Contains sub directories for images and icons that are used in the application and by the dummy-data.
-- **styles** - Contains CSS files that are used to style the application beyond Bootstrap's inline styling.
--
+This application is organized into the following directories:
+
+- 🚀 **/app**: Contains the login page and initial landing page that users see when they load the web application. The login page is not functional, but it serves to simulate a potential authentication flow. This directory also contains footers, which are used across all pages of the application. Routes to the `MainView` component.
+
+- 📄 **/pages**: Contains the `MainView` component, which forms the core of the application. This directory can be expanded with additional pages as needed. Currently we retain the main view and simply change component states when the user interacts with the UI.
+
+- 🛠️ **/src/components**: This directory is home to the React components that build the application's UI. Components such as the `AchievementContainer` and the `AchievementCard` are housed here.
+
+- 🧩 **/dummy-data**: Contains the `GameData.js` file, which is used to populate the application with game and achievement data.
+
+- 🖼️ **/public**: This directory contains subdirectories for images and icons used throughout the application.
+
+- 🎨 **/styles**: Contains CSS files used for styling the application, providing a custom aesthetic beyond Bootstrap's inline styles.
 
 ## Future suggestions
 
