@@ -27,6 +27,7 @@ export default function GameCardContainer() {
   // State variables for the list of games, the sort type, whether to view all achievements, and the clicked game
   const [gameList, setGameList] = useState(games);
   const [sortType, setSortType] = useState('lastPlayed');
+  // viewAll is used to determine whether to show the list of games or the all achievements page
   const [viewAll, setViewAll] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
   const [initialLockedFilter, setInitialLockedFilter] = useState(null);

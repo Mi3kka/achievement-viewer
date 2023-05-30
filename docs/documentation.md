@@ -80,9 +80,9 @@ The state management is implemented primarily using the built-in `useState` hook
 
 - `sortType`: This state is used to sort the games displayed in the GameCardContainer. It can take any property name of a game object as a value. It is initially set to `'lastPlayed'`, meaning that games will be sorted by the date they were last played.
 
-- `viewAll`: A boolean state indicating whether all games should be viewed. It is initialized as `false`, and when set to `true`, the application displays
+- `viewAll`: A boolean state used to determine whether to show the list of games or the all achievements page. Used to toggle between the two views or in this case component rendering. Initially I had this in the MainView component, but it was easier to manage the state in the GameCardContainer component as it is the one that renders the view all achievements button.
 
-- `selectedGame`: This state is utilized to track the currently selected game. Initially, it is set to `null`. However, when a user clicks on a game card, this state updates to the name of the selected game and therefore triggers the rendering of the `AchievementContainer` component and automatically applies a filter sort to display only achievements for the selected game.
+- `selectedGame`: As we went through in the the MainView States, this is used to track the currently selected or "clicked" game. Initially, it is set to `null`. However, when a user clicks on a game card, this state updates to the name of the selected game and therefore triggers the rendering of the `AchievementContainer` component and automatically applies a filter sort to display only achievements for the selected game.
 
 - `initialLockedFilter`: This state is used to initialize the 'lockedFilter' state in the `AchievementContainer` component. It is initially set to `null`, meaning that achievements of all statuses ('all', 'completed', 'locked') are displayed.
 
