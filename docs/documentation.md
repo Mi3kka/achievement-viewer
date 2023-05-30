@@ -111,15 +111,15 @@ For example, the `MainView` component passes the list of games and the `onGameCa
 <GameCardContainer games={games} onGameCardClick={handleGameCardClick} />
 ```
 
+### From GameCardContainer to Child Components
+
 Similarly, if a specific game is pressed by the user, the GameCardContainer component passes the selected game to the AchievementContainer component:
 
 ```jsx
 <AchievementContainer handleViewAll={handleViewAll} selectedGame={selectedGame} initialLockedFilter={null} />
 ```
 
-### From GameCardContainer to Child Components
-
-The GameCardContainer component maps over the games data passed from MainView and passes individual game data to GameCard components:
+The GameCardContainer component also maps over the games data passed from MainView and passes individual game data to GameCard components:
 
 ```jsx
 games.map((game) => (
