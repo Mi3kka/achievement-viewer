@@ -79,15 +79,18 @@ This application is organized into the following directories:
 
 - 🎨 **/styles**: Contains CSS files used for styling the application, providing a custom aesthetic beyond Bootstrap's inline styles.
 
+## Documentation
+
+Please read the `documentation.md` inside the docs folder for more information on the application's design and implementation.
+
 ## Future suggestions
 
 - Add a back-end database to store user data (e.g. MongoDB)
 - Add user authentication along with Steam and other platforms, which store game achievements (e.g. Xbox, PlayStation, etc.)
 
 ## Credits
-
+- [Anniina Talja (for UI/UX design)](https://www.utu.fi/fi/ihmiset/anniina-talja)
 - [Steam](https://store.steampowered.com/)
-- [Anniina Talja (UI/UX design)](https://www.utu.fi/fi/ihmiset/anniina-talja)
 
 ## License
 
