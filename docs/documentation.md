@@ -89,12 +89,6 @@ The state management is implemented primarily using the built-in `useState` hook
 
 - `initialLockedFilter`: This state is used to initialize the 'lockedFilter' state in the `AchievementContainer` component. It is initially set to `null`, meaning that achievements of all statuses ('all', 'completed', 'locked') are displayed.
 
-### Static Data
-
-The application currently uses static data stored in the `dummy-data.js` file. This data is used to populate the main view, as well as the filters and sorting mechanisms. By changing the data in this file, the application can be tested with different parameters and data.
-
-The user info is simply stored in a variable in the MainView component. This data is used to populate the header. This data is not used anywhere else in the application, so it only serves as a placeholder.
-
 ---
 
 ## Data Flow Across Components
@@ -141,6 +135,12 @@ filteredAchievements.map((achievement) => (
 Here we see achievement data being passed to the AchievementCard component in the form of a prop.
 
 Essentially the data flow relies heavily on props, it's a simple and effective way to pass data between components and establish connection between different parts of the application. To me, it's a bit similar to the way we used to pass data between different classes in Java, but it feels more flexible (but maybe that's just me).
+
+### Static Data
+
+The application currently uses static data in some parts. The game data is stored in the `dummy-data.js` file. This data is used to populate the main view, as well as the filters and sorting mechanisms. By changing the data in this file, the application can be tested with different parameters and data.
+
+The user info is simply stored in a few variables in the MainView component. This data is used to populate the header. This data is not used anywhere else in the application, so it only serves as a placeholder. Also the total achievement count in the gamecards is static data, but can be connected to the actual achievement data in the future. We felt we wouldn't need to populate the dummy data with hundreds of achievements, as it would be too much work for a demo project, which ultimately only demonstrates the UI and interaction of components.
 
 ---
 
