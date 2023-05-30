@@ -17,7 +17,7 @@ export default function MainView() {
 
   // The username, overall achievement count, perfect game count, and profile picture are hardcoded for now
   const username = 'Laenis';
-  const overallAchievements = 154;
+  const overallAchievements = 376;
   const perfectGames = 1;
   const picture = '/laenis_full.jpg';
 
