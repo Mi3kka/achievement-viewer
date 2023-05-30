@@ -6,8 +6,9 @@
 2. [Components](#components)
 3. [Routing & State Management](#routing--state-management)
 4. [Data Flow Across Components](#data-flow-across-components)
-5. [Tools & Libraries](#tools--libraries)
-6. [Credits](#credits)
+5. [Data Modeling & Static Data](#data-modeling--static-data)
+6. [Tools & Libraries](#tools--libraries)
+7. [Credits](#credits)
 
 ---
 
@@ -136,11 +137,37 @@ Here we see achievement data being passed to the AchievementCard component in th
 
 Essentially the data flow relies heavily on props, it's a simple and effective way to pass data between components and establish connection between different parts of the application. To me, it's a bit similar to the way we used to pass data between different classes in Java, but it feels more flexible (but maybe that's just me).
 
-### Static Data
+### Data Modeling & Static Data
 
-The application currently uses static data in some parts. The game data is stored in the `dummy-data.js` file. This data is used to populate the main view, as well as the filters and sorting mechanisms. By changing the data in this file, the application can be tested with different parameters and data.
+The dummy data is stored in the `dummy-data.js` file. This data works as the makeshift database for the application. The data is stored in the form of an array of objects, with each object representing a game. Each game object contains the following properties:
 
-The user info is simply stored in a few variables in the MainView component. This data is used to populate the header. This data is not used anywhere else in the application, so it only serves as a placeholder. Also the total achievement count in the gamecards is static data, but can be connected to the actual achievement data in the future. We felt we wouldn't need to populate the dummy data with hundreds of achievements, as it would be too much work for a demo project, which ultimately only demonstrates the UI and interaction of components.
+- `id`: A unique identifier for the game. This is used to identify the game when passing data between components.
+- `name`: The name of the game.
+- `icon`: The URL/directory of the game's icon.
+- `achievements`: The sum of your unlocked achievements and the total amount of achievements in the game. This is used to calculate the completion percentage, but does not represent the actual number of achievements we store in the dummy data. It purely for demonstration purposes.
+- `lastPlayed`: The date the game was last played.
+- `achievementList`: An array of achievement objects. Each achievement object contains the following properties:
+  - `id`: A unique identifier for the achievement. This is used to identify the achievement when passing data between components.
+  - `name`: The name of the achievement.
+  - `description`: The description of the achievement and what it requires the player to do.
+  - `icon`: The URL/directory of the achievement's own icon.
+  - `locked`: A boolean value indicating whether the achievement is locked or unlocked.
+  - `visible`: A boolean value indicating whether the achievement is visible or hidden. Hidden achievements are blurred if not unlocked.
+  - `globalUnlocks`: The number of global unlocks for the achievement. Does not represent the actual number of unlocks worldwide.
+  - `unlockDate`: The date the achievement was unlocked.
+
+You may edit this data to test the application with different parameters. The application is designed to work with this data, so if you change the achievements or games, the application should work as intended. However, if you change the structure of the data, you may have to adjust the code accordingly (especially if future use-cases require JSON or XML data parsing).
+
+While dummy-data is used to populate the main view, the user info is simply stored in a few variables in the `MainView` component. This data is used to populate the header. This data is not used anywhere else in the application, so it only serves as a placeholder.
+
+You can change these values manually like this in the `MainView` component:
+
+```jsx
+  const username = 'Username'; // Your username
+  const overallAchievements = 154; // Your total number of achievements
+  const perfectGames = 1;  // Your total number of perfect games
+  const picture = '/profile-pic.jpg'; // Your profile picture
+```
 
 ---
 

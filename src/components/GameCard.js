@@ -38,7 +38,7 @@ export default function GameCard({ game, onClick }) {
       <div className="ms-3 game-text-container">
         <h5 className="game-name">{game.name}</h5>
         <p className="game-achievement">{game.achievements.completed} / {game.achievements.total}</p>
-        <p className="last-played">{game.lastPlayed ? `Last Played: ${game.lastPlayed.toISOString().slice(0,10)}` : 'Never Played'}</p> 
+        <p className="last-played">{game.lastPlayed ? `Last Played: ${game.lastPlayed.toISOString().slice(0,10)}` : 'Never Played'}</p>
         {/* If the game has never been played, display "Never Played" */}
       </div>
       <div className="ms-auto achievement-total-container" style={{backgroundColor: percentageColor}}>
@@ -47,11 +47,11 @@ export default function GameCard({ game, onClick }) {
       {game.achievements.completed === game.achievements.total &&
         <div className="ms-2 game-trophy">
           <Image
-            className="trophy-img"
-            src="/trophy.svg"
-            alt="All achievements unlocked"
-            width={20}
-            height={20}
+            className="complete-check-img"
+            src="/icons/complete-check.svg"
+            alt="All achievements unlocked."
+            width={25}
+            height={25}
           />
         </div>
       }

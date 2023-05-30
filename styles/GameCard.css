@@ -69,8 +69,11 @@
 
 }
 
-.trophy-img {
-
+.complete-check-img {
+  width: 20px;
+  height: 20px;
+  margin-left: 0.5rem;
+  margin-top: -0.5rem;
 }
 
 /* For mobile devices */
