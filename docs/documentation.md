@@ -7,6 +7,7 @@
 3. [Routing & State Management](#routing--state-management)
 4. [Data Flow Across Components](#data-flow-across-components)
 5. [Tools & Libraries](#tools--libraries)
+6. [Credits](#credits)
 
 ---
 
