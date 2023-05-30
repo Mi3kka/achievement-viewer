@@ -61,7 +61,7 @@ Development should be done on a feature branch. Once the feature is complete, cr
 - [Node.js & npm](https://nodejs.org/en/)
 - [Eslint (for code linting)](https://eslint.org/)
 - [Prettier (for code formatting)](https://prettier.io/)
-- [Vercel (for hosting)](https://vercel.com/)
+- [Vercel (for deployment & hosting)](https://vercel.com/)
 
 ## 📂 Project Structure
 
@@ -110,4 +110,4 @@ Mobile view:
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](LICENSE.txt)
