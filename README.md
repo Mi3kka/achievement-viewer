@@ -60,12 +60,13 @@ Development should be done on a feature branch. Once the feature is complete, cr
 
 ## Project structure
 
-- **app** - Contains the login page and the initial page that is displayed when the user logs in.
+- **app** - Contains the login page and the initial page that is displayed when a client loads web application. The login page is not functional, but it is there to simulate a login page. Also contains footers, which are used on all pages.
 - **pages** - Contains the main view page that is the entry point of the application. Can be extended to cover other pages as well.
 - **src/components** - Contains React components that are used to build the application UI. For example the achievement container is a component, and that component houses achievement cards, which are also components.
 - **dummy-data** - Contains the dummy-data.js file, which is used to populate the application with data.
-- **public** - Contains icons, pictures, and other static files that are used by dummy-data.js and the application to render icons and images.
+- **public** - Contains sub directories for images and icons that are used in the application and by the dummy-data.
 - **styles** - Contains CSS files that are used to style the application beyond Bootstrap's inline styling.
+-
 
 ## Future suggestions
 
