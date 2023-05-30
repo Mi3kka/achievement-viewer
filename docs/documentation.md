@@ -23,7 +23,9 @@ The initial goal of this project was to create a prototype focused on interactio
 
 ### UI & UX Design
 
-The UI and UX design of this application was mocked and prototyped by Anniina Talja. The mockup was then implemented by Julius Virtanen. Design was tweaked and adjusted during the implementation process to ensure the designer's vision. The logic of the application was also implemented by Julius and Anniina guided the implementation process to ensure the application works as intended. Anniina will be using this application to demonstrate her vision for a achievement environment in her thesis.
+The UI and UX design of this application was mocked and prototyped by Anniina Talja. The mockup was then implemented by Julius Virtanen. Design was tweaked and adjusted during the implementation process to ensure the designer's vision. Here's one mockup and logic outline
+
+The logic of the application was also implemented by Julius and Anniina guided the implementation process to ensure the application works as intended. Anniina will be using this application to demonstrate her vision for a achievement environment in her thesis.
 
 The design was inspired by Steam application by Valve, utilizing similar colors and UI elements. The application was designed to be intuitive and easy to use. Special directive was given to the mobile scaling of the application, which should scale well depending on the device view port size.
 

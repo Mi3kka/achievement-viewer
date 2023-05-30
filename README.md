@@ -95,6 +95,17 @@ Of course, there are also several comments throughout the code that explain the 
 - **Julius Virtanen**: Implementation of the front end application, routing, state management, data flow and testing. Also wrote documentation.
 - **Valve**: Inspiration for the UI design.
 
+## Screenshots
+
+Main application view:
+![Main view](docs/screenshots/main-view.png)
+
+Achievement view:
+![Main view](docs/screenshots/achievement-view.png)
+
+Mobile view (in achievement view):
+![Main view](docs/screenshots/mobile-view.png)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
