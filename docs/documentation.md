@@ -137,7 +137,8 @@ Here we see achievement data being passed to the AchievementCard component in th
 
 Essentially the data flow relies heavily on props, it's a simple and effective way to pass data between components and establish connection between different parts of the application. To me, it's a bit similar to the way we used to pass data between different classes in Java, but it feels more flexible (but maybe that's just me).
 
-### Data Modeling & Static Data
+---
+## Data Modeling & Static Data
 
 The dummy data is stored in the `dummy-data.js` file. This data works as the makeshift database for the application. The data is stored in the form of an array of objects, with each object representing a game. Each game object contains the following properties:
 
