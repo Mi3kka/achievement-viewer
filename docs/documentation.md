@@ -26,7 +26,7 @@ The UI and UX design of this application was mocked and prototyped by Anniina Ta
 
 The design was inspired by Steam application by Valve, utilizing similar colors and UI elements. The application was designed to be intuitive and easy to use. Special directive was given to the mobile scaling of the application, which should scale well depending on the device view port size.
 
-CSS styles were implemented using Bootstrap and global CSS stylesheets, which handle the majority of the styling. Some inline styling was also used to tweak the UI to match the designer's mockups. Media queries were used to ensure the application scales well on different devices. Query testing was done on multiple device sizes to ensure the application scales well and single components do not break the layout.
+CSS styles were implemented using Bootstrap and global CSS stylesheets, which handle the majority of the styling. In some instances, we also used UNICODE characters (Emojis) to render some elements. Some inline styling was also used to tweak the UI to match the designer's mockups. Media queries were used to ensure the application scales well on different devices. Query testing was done on multiple device sizes to ensure the application scales well and single components do not break the layout.
 
 ---
 
