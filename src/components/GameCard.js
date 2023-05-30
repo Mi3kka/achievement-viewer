@@ -11,16 +11,14 @@ export default function GameCard({ game, onClick }) {
 
   // Calculate the color based on completion rate, using rgba to set the opacity lower.
   let percentageColor;
-  if (completionPercentage <= 20) {
-    percentageColor = "rgba(255,128,128,0.5)"; // Red
-  } else if (completionPercentage <= 40) {
-    percentageColor = "rgba(255,165,0,0.5)"; // Orange
-  } else if (completionPercentage <= 60) {
-    percentageColor = "rgba(255,255,128,0.5)"; // Yellow
-  } else if (completionPercentage <= 80) {
-    percentageColor = "rgba(204,255,128,0.5)"; // Light Green
+  if (completionPercentage <= 25) {
+    percentageColor = "rgba(255,128,128,0.65)"; // Red
+  } else if (completionPercentage <= 50) {
+    percentageColor = "rgba(255,165,30,0.65)"; // Orange
+  } else if (completionPercentage <= 75) {
+    percentageColor = "rgba(255,255,80,0.65)"; // Yellow
   } else {
-    percentageColor = "rgba(128,255,170,0.5)"; // Green
+    percentageColor = "rgba(128,255,170,0.65)"; // Green
   }
 
   return (
