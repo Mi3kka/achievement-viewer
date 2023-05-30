@@ -111,7 +111,7 @@ For example, the `MainView` component passes the list of games and the `onGameCa
 <GameCardContainer games={games} onGameCardClick={handleGameCardClick} />
 ```
 
-Similarly, if a specific game is pressed by the user, the MainView component passes the selected game to the AchievementContainer component:
+Similarly, if a specific game is pressed by the user, the GameCardContainer component passes the selected game to the AchievementContainer component:
 
 ```jsx
 <AchievementContainer handleViewAll={handleViewAll} selectedGame={selectedGame} initialLockedFilter={null} />
@@ -131,13 +131,16 @@ The onClick prop is a function that calls the onGameCardClick function with the 
 
 ### From AchievementContainer to Child Components
 
-The AchievementContainer component also maps over achievement data and passes individual achievement data to AchievementCard components:
+The AchievementContainer component also maps over achievement data and passes individual achievement data to individual AchievementCard components:
 
 ```jsx
 filteredAchievements.map((achievement) => (
   <AchievementCard achievement={achievement} key={achievement.id} />
 ))
 ```
+Here we see achievement data being passed to the AchievementCard component in the form of a prop.
+
+Essentially the data flow relies heavily on props, it's a simple and effective way to pass data between components and establish connection between different parts of the application. To me, it's a bit similar to the way we used to pass data between different classes in Java, but it feels more flexible (but maybe that's just me).
 
 ---
 
