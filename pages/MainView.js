@@ -16,10 +16,10 @@ export default function MainView() {
   const  setSelectedGame = useState(null);
 
   // The username, overall achievement count, perfect game count, and profile picture are hardcoded for now
-  const username = 'Laenis';
+  const username = 'Test User';
   const overallAchievements = 376;
   const perfectGames = 1;
-  const picture = '/laenis_full.jpg';
+  const picture = '/profile_image_placeholder.jpg';
 
   // Function to handle when a game card is clicked, sets the selected game name and passes it
   // to the GameCardContainer as props so that a filter can be applied to the achievements
