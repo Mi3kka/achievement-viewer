@@ -1,10 +1,10 @@
-# Achievement Viewer
+# 🏆 Achievement Viewer 🏆
 
 ## Description
 
 Achievement Viewer is a Next.js based web application that allows users to track their video game achievements. It displays a list of owned games, as well as the achievements the user has unlocked for each game. The application also provides filters and sorting mechanisms to facilitate the search for specific achievements.
 
-This is primarily a demo project to showcase a front-end achievement environment. It is not intended to be a fully functional full-stack application as it is missing a back-end database and user authentication. However, it does simulate a full environment by storing data in a dummy-data.js file, fetching data and populating elements within React components.
+This is primarily a demo project to showcase a front-end achievement environment. It is not intended to be a fully functional full-stack application as it is missing a back-end database and user authentication. However, it does simulate a full environment by storing data in a dummy-data.js file, fetching data and populating elements within React components. The data works as the backbone of the application and is used to populate the main view, as well as the filters and sorting mechanisms.
 
 ##  Access the web application
 
