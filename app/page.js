@@ -1,5 +1,7 @@
 'use client'
 
+// page.js (Login Page)
+
 import Footer from '../app/footer';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
@@ -7,7 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Login.css';
 
 export default function Login() {
+
+  // Using the useRouter hook to redirect to the main page when the login button is clicked
   const router = useRouter();
+
   return (
     <div className="container">
       <main className="main-content">

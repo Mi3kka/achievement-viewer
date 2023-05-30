@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react';
 import { games } from '../../dummy-data/GameData';
 import AchievementCard from './AchievementCard';
+import Image from 'next/image';
 import '../../styles/GameCardContainer.css';
 import '../../styles/AchievementContainer.css';
-import Image from 'next/image';
 
 function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter = null }) {
+  // State variables for the search terms, locked filter, visibility filter, and sort method
   const [gameSearchTerm, setGameSearchTerm] = useState(selectedGame ? selectedGame.name : '');
   const [achievementSearchTerm, setAchievementSearchTerm] = useState('');
   const [lockedFilter, setLockedFilter] = useState(initialLockedFilter);
@@ -16,16 +17,17 @@ function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter
   const [achievements, setAchievements] = useState([]);
   const [filteredAchievements, setFilteredAchievements] = useState([]);
 
+  // Set the achievement list state variable based on the games prop
   useEffect(() => {
     const achievementList = games.reduce(
         (acc, game) => [...acc, ...game.achievementsList.map((achievement) => ({ ...achievement, game }))],
         []
     );
     setAchievements(achievementList);
-  }, [games]);
+  }, []);
 
+  // Filter the achievements based on the game search term, achievement search term, locked filter, and visibility filter
   useEffect(() => {
-    // Filter the achievements based on the game search term, achievement search term, locked filter, and visibility filter
     const lowerCaseGameSearchTerm = gameSearchTerm.toLowerCase();
     const lowerCaseAchievementSearchTerm = achievementSearchTerm.toLowerCase();
 
@@ -66,27 +68,33 @@ function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter
       });
     }
 
+    // Set the filtered achievements
     setFilteredAchievements(newFilteredAchievements);
   }, [gameSearchTerm, achievementSearchTerm, lockedFilter, visibilityFilter, sortMethod, achievements]);
 
+  // Handle changes to game search term
   const handleGameSearchChange = (event) => {
     setGameSearchTerm(event.target.value);
   };
 
+  // Handle changes to the achievement search term
   const handleAchievementSearchChange = (event) => {
     setAchievementSearchTerm(event.target.value);
   };
 
+  // Handle changes to the locked filter
   const handleLockedFilterChange = (event) => {
     const value = event.target.value === 'true' ? true : event.target.value === 'false' ? false : null;
     setLockedFilter(value);
   };
 
+  // Handle changes to the visibility filter
   const handleVisibilityFilterChange = (event) => {
     const value = event.target.value === 'true' ? true : event.target.value === 'false' ? false : null;
     setVisibilityFilter(value);
   };
 
+  // Handle changes to the sort filter (global unlocks, unlock date, etc.)
   const handleSortMethodChange = (event) => {
     setSortMethod(event.target.value);
   };
@@ -103,7 +111,7 @@ function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter
               className="search-input"
               type="text"
               placeholder="Sort by game"
-              onChange={handleGameSearchChange}
+              onChange={handleGameSearchChange} // onChange prop function is called when the input changes on the search
               value={gameSearchTerm}
             />
           <Image src="/icons/magnifying-glass.svg" alt="Search icon" width={20} height={20} className="search-icon"/>
@@ -157,7 +165,7 @@ function AchievementContainer({ handleViewAll, selectedGame, initialLockedFilter
         </div>
         <div className="achievement-container">
           {filteredAchievements.map((achievement) => (
-            <AchievementCard key={`${achievement.id}-${achievement.game.id}`} achievement={achievement} visibilityFilter={visibilityFilter} />
+            <AchievementCard key={`${achievement.id}-${achievement.game.id}`} achievement={achievement} visibilityFilter={visibilityFilter} /> // Pass the achievement and visibility filter as props to the AchievementCard component
           ))}
       </div>
     </div>

@@ -1,6 +1,9 @@
+// AppFooter.js
+
 import React from 'react';
 import '../styles/AppFooter.css';
 
+// The AppFooter component is a simple footer that displays the current year and the app name. Used in the main view.
 const AppFooter = () => {
   return (
     <footer className="app-footer">

@@ -4,7 +4,10 @@ import React from 'react';
 import Image from 'next/image';
 import '../../styles/AchievementCard.css';
 
+// The AchievementCard component takes in an achievement prop for the achievement data and a visibilityFilter prop for the blur status
 function AchievementCard({ achievement, visibilityFilter }) {
+
+  // The data structure of the achievement card is as follows. This creates a card with the game image, game name, achievement name, achievement description, achievement status, and global unlock percentage
   const {
     name,
     game,
@@ -16,7 +19,7 @@ function AchievementCard({ achievement, visibilityFilter }) {
     unlockPercentage
   } = achievement;
 
-  // Define a condition to decide whether to blur or not
+  // Define a variable for the blur condition
   const shouldBlur = hidden && visibilityFilter !== true && locked;
 
   return (

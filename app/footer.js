@@ -1,8 +1,13 @@
+// footer.js
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Footer.css';
 import Image from 'next/image';
 
+// Used in the login page to display info about the creators, license and GitHub link
 export default function Footer() {
+
+  // Get the current year
   const year = new Date().getFullYear();
 
   return (

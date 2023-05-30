@@ -83,6 +83,8 @@ This application is organized into the following directories:
 
 Please read the `documentation.md` inside the docs folder for more information on the application's design and implementation.
 
+Of course, there are also several comments throughout the code that explain the functionality of the application in more detail.
+
 ## Future suggestions
 
 - Add a back-end database to store user data (e.g. MongoDB)
