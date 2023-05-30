@@ -10,7 +10,7 @@ This is primarily a demo project to showcase a front-end achievement environment
 
 The initial goal of this project was to create a prototype focused on interaction and UI design using tools suchs as Figma, Adobe XD or Sketch.
 
-I however decided to take it a step further and create a functional front end web application that would allow me to showcase the prototype with full functionality instead of just static images and mockups. This would allow me to demonstrate the application's UI and interaction far more effectively.
+However, we decided to take it a step further and create a functional front end web application that would allow us to showcase the prototype with full functionality instead of just static images and mockups. This would allow us to demonstrate the application's UI and interaction far more effectively.
 
 ## 🖥️ Access the web application
 
