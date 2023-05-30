@@ -6,6 +6,12 @@ Achievement Viewer is a Next.js based web application that allows users to track
 
 This is primarily a demo project to showcase a front-end achievement environment. It is not intended to be a fully functional full-stack application as it is missing a back-end database and user authentication. However, it does simulate a full environment by storing data in a dummy-data.js file, fetching data and populating elements within React components. The data works as the backbone of the application and is used to populate the main view, as well as the filters and sorting mechanisms.
 
+### Idea and motivation
+
+The initial goal of this project was to create a prototype focused on interaction and UI design using tools suchs as Figma, Adobe XD or Sketch.
+
+I however decided to take it a step further and create a functional front end web application that would allow me to showcase the prototype with full functionality instead of just static images and mockups. This would allow me to demonstrate the application's functionality and simulate a full environment.
+
 ## 🖥️ Access the web application
 
 The application is hosted on Vercel and can be accessed at the following URL:
@@ -21,7 +27,6 @@ The application is hosted on Vercel and can be accessed at the following URL:
 - Responsive design for mobile and desktop. Tested on multiple device-sizes.
 - Steam-like UI design.
 - You can add your own data to the dummy-data.js file to test the application with different parameters and data.
-##
 
 ## 🧰 Installation and development setup
 
