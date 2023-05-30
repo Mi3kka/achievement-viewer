@@ -1,8 +1,10 @@
+/* AchievementContainer styles */
+
 .achievements-page-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* Added this line */
+  flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
@@ -15,7 +17,7 @@
 }
 
 .back-button:hover {
-  border-radius: 50%; /* Make the icon round */
+  border-radius: 50%;
   width: 2.8rem;
   height: 2.8rem;
 }
@@ -32,13 +34,6 @@
   margin-top: 1.4rem;
 }
 
-@media screen and (max-width: 680px) {
-  .search-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 .search-input-container {
   position: relative;
 }
@@ -49,30 +44,12 @@
   font-size: 1.12rem;
 }
 
-@media screen and (max-width: 800px) {
-  .search-input {
-    width: 17.2rem;
-    font-size: 1.03rem;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .search-input {
-    width: 16.8rem;
-    font-size: 1.1rem;
-  }
-
-  .search-input-container {
-    margin-right: 0.5rem;
-  }
-}
-
 .search-input-container .search-icon {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-40%);
-  color: #aaa; /* Adjust color as needed */
+  color: #aaa;
   border: none;
 }
 
@@ -161,6 +138,20 @@
   position: relative;
 }
 
+.achievement-container {
+  overflow-y: scroll;
+  max-height: 70vh;
+}
+
+/* For mobile devices, might want to specify one max-width later*/
+
+@media screen and (max-width: 800px) {
+  .search-input {
+    width: 17.2rem;
+    font-size: 1.03rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .filter-container {
     justify-content: flex-end;
@@ -196,6 +187,21 @@
     margin-top: 5px;
     font-size: 1.1rem;
   }
+  .search-input {
+    width: 16.8rem;
+    font-size: 1.1rem;
+  }
+
+  .search-input-container {
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .search-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -203,9 +209,4 @@
     width: 20%;
     font-size: 0.8rem;
   }
-}
-
-.achievement-container {
-  overflow-y: scroll;
-  max-height: 70vh;
 }

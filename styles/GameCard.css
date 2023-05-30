@@ -1,4 +1,4 @@
-/* GameCard.css */
+/* GameCard styles */
 
 .game-card {
   background-color: #1b2838;
@@ -54,17 +54,7 @@
   padding: 5px 10px;
   text-align: center;
   border-radius: 5px;
-  text-shadow: 2px 2px 4px #000000; /* Apply a black shadow to the text */
-}
-
-/* For smaller screens */
-
-@media screen and (max-width: 600px) {
-  .achievement-total-container {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .game-achievement {
@@ -83,9 +73,15 @@
 
 }
 
-/* For smaller screens */
+/* For mobile devices */
 
 @media screen and (max-width: 600px) {
+  .achievement-total-container {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
   .game-img {
     width: 52px;
     height: 52px;

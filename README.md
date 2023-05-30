@@ -97,6 +97,8 @@ Of course, there are also several comments throughout the code that explain the 
 
 ## Screenshots
 
+Here are some screenshots of the application in action:
+
 Main application view:
 ![Main view](docs/screenshots/main-view.png)
 
