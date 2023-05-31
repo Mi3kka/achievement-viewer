@@ -7,6 +7,7 @@ import { games } from '../dummy-data/GameData';
 import AppFooter from '../app/AppFooter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/MainView.css';
+import Head from 'next/head';
 
 // The MainView component is the main view of the app. It displays the user's profile picture, username, and overall achievement and perfect game counts.
 // It houses the GameCardContainer component and handles the state change to the all achievements page.
@@ -28,6 +29,26 @@ export default function MainView() {
   }
 
   return (
+    <>
+      <Head>
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
     <div className="container-fluid text-light py-3 achievements-container">
       <header className="rounded d-flex rounded justify-content-between align-items-center header-bar">
         <div className="d-flex align-items-center">
@@ -61,5 +82,6 @@ export default function MainView() {
         <GameCardContainer games={games} onGameCardClick={handleGameCardClick} /> {/* Pass the games and the selectedGame to GameCardContainer */}
       <AppFooter />
     </div>
+    </>
   );
 }
