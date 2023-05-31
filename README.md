@@ -18,6 +18,8 @@ The application is hosted on Vercel and can be accessed at the following URL:
 
 [https://achievement-viewer.vercel.app/](https://achievement-viewer.vercel.app/)
 
+Simply press Login to access the main view. The login page is not functional, but it serves to simulate a potential authentication flow.
+
 ## 📑 Features
 
 - Display a list of owned games with their achievements & stats.
