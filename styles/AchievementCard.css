@@ -17,6 +17,7 @@
 
 .achievement-card .hidden {
   filter: blur(6px);
+  user-select: none; /* prevent copying */
 }
 
 .achievement-img {
