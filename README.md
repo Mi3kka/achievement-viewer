@@ -12,7 +12,7 @@ The initial goal of this project was to create a prototype focused on interactio
 
 However, we decided to take it a step further and create a functional front end web application that would allow us to showcase the prototype with full functionality instead of just static images and mockups. This would allow us to demonstrate the application's UI and interaction far more effectively and on multiple devices.
 
-## 🖥Access the web application
+## Access the web application
 
 The application is hosted on Vercel and can be accessed at the following URL:
 
