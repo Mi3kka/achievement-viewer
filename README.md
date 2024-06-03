@@ -1,4 +1,4 @@
-# 🏆 Achievement Viewer 🏆
+# Achievement Viewer
 
 ## Description
 
@@ -12,7 +12,7 @@ The initial goal of this project was to create a prototype focused on interactio
 
 However, we decided to take it a step further and create a functional front end web application that would allow us to showcase the prototype with full functionality instead of just static images and mockups. This would allow us to demonstrate the application's UI and interaction far more effectively and on multiple devices.
 
-## 🖥️ Access the web application
+## 🖥Access the web application
 
 The application is hosted on Vercel and can be accessed at the following URL:
 
@@ -20,7 +20,7 @@ The application is hosted on Vercel and can be accessed at the following URL:
 
 Simply press Login to access the main view. The login page is not functional, but it serves to simulate a potential authentication flow.
 
-## 📑 Features
+## Features
 
 - Display a list of owned games with their achievements & stats.
 - Filter and search for achievements based on game name, achievement status (locked/unlocked), visibility, and more.
@@ -30,7 +30,7 @@ Simply press Login to access the main view. The login page is not functional, bu
 - Steam-like UI design.
 - You can add your own data to the dummy-data.js file to test the application with different parameters and data.
 
-## 🧰 Installation and development setup
+## Installation and development setup
 
 1. **Clone the repository:**
 
@@ -65,21 +65,21 @@ Development should be done on a feature branch. Once the feature is complete, cr
 - [Prettier (for code formatting)](https://prettier.io/)
 - [Vercel (for deployment & hosting)](https://vercel.com/)
 
-## 📂 Project Structure
+## Project Structure
 
 This application is organized into the following directories:
 
-- 🚀 **/app**: Contains the login page and initial landing page that users see when they load the web application. The login page is not functional, but it serves to simulate a potential authentication flow. This directory also contains footers, which are used across all pages of the application. Routes to the `MainView` component.
+- **/app**: Contains the login page and initial landing page that users see when they load the web application. The login page is not functional, but it serves to simulate a potential authentication flow. This directory also contains footers, which are used across all pages of the application. Routes to the `MainView` component.
 
-- 📄 **/pages**: Contains the `MainView` component, which forms the core of the application. This directory can be expanded with additional pages as needed. Currently we retain the main view and simply change component states when the user interacts with the UI.
+- **/pages**: Contains the `MainView` component, which forms the core of the application. This directory can be expanded with additional pages as needed. Currently we retain the main view and simply change component states when the user interacts with the UI.
 
-- 🛠️ **/src/components**: This directory is home to the React components that build the application's UI. Components such as the `AchievementContainer` and the `AchievementCard` are housed here.
+- 🛠**/src/components**: This directory is home to the React components that build the application's UI. Components such as the `AchievementContainer` and the `AchievementCard` are housed here.
 
-- 🧩 **/dummy-data**: Contains the `GameData.js` file, which is used to populate the application with game and achievement data.
+- **/dummy-data**: Contains the `GameData.js` file, which is used to populate the application with game and achievement data.
 
-- 🖼️ **/public**: This directory contains subdirectories for images and icons used throughout the application.
+- 🖼**/public**: This directory contains subdirectories for images and icons used throughout the application.
 
-- 🎨 **/styles**: Contains CSS files used for styling the application, providing a custom aesthetic beyond Bootstrap's inline styles.
+- **/styles**: Contains CSS files used for styling the application, providing a custom aesthetic beyond Bootstrap's inline styles.
 
 ## Documentation
 
